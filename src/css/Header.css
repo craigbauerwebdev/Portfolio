@@ -1,0 +1,12 @@
+header {
+  background: #0080FF;
+  color: #fff;
+  padding: 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  z-index: 99;
+}
+.material-icons {
+  padding: 10px;
+}
