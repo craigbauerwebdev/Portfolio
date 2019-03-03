@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
 import './css/Home.css';
 //import Button from './ui-components/Button';
+import Weather from './Weather';
 
 class Home extends Component {
 
   render() {
-    const ds = this.props.darksky.options({
-          latitude: 41.115704,
-          longitude: -74.149263,
-          //time: '2017-08-10',
-          language: 'en',
-          //exclude: ['minutely', 'daily'],
-          extendHourly: true
-      })
-      .get()
-      .then()
-
-      console.log('Darksky', ds);
     return (
-      <div className="home-route">
-
+      <div id="home-wrap">
         <h1>Home Route</h1>
-
+        <Weather weather={this.props.weather} />
       </div>
     );
   }
+
 }
 
 export default Home;
