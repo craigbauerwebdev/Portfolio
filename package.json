@@ -8,6 +8,7 @@
     "dark-sky": "^1.1.5",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-mail-form": "^1.0.3",
     "react-scripts": "2.1.5"
   },
   "scripts": {

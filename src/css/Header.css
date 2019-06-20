@@ -1,12 +1,25 @@
 header {
-  background: #0080FF;
+  /*background: rgba(50, 58, 71, 1);*/
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #fff;
   padding: 15px;
   position: sticky;
   position: -webkit-sticky;
   top: 0; /* required */
   z-index: 99;
+  text-align: center;
+}
+header img {
+	max-width: 380px;
+	width: 100%;
+	height: auto;
 }
 .material-icons {
   padding: 10px;
+}
+header .nav-icons {
+  margin-top: 15px;
 }

@@ -42,7 +42,7 @@ class Weather extends Component {
     return (
       <div id="weather-wrap">
 
-        <h1>Currently:</h1>
+        <h1>Weather Component:</h1>
         <p>{day}</p>
         <p>{month}</p>
 

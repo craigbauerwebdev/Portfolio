@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import './css/App.css';
 import axios from 'axios';
 //import DarkSky from 'dark-sky';
+import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
+import Resume from './Resume';
 import Weather from './Weather';
-//import Button from './ui-components/Button';
+import './css/App.css';
 
 const ny = `41.115704,-74.149263`;
 
@@ -17,18 +18,17 @@ class App extends Component {
       weather: 'fifty cent'
     };
   }
-  
-  //https://api.darksky.net/forecast/1ed2786cd16aef53eb5e3a8b23c10a69/41.115704,-74.149263
-  componentDidMount(){ //host api on my server - https://cors-anywhere.herokuapp.com/
+
+  componentDidMount(){
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/1ed2786cd16aef53eb5e3a8b23c10a69/`+ny)
       .then(res => {
         const darkSkyData = res.data;
         this.setState({ weather: darkSkyData });
-      })
+      });
   }
 
   log() {
-    console.log('xxx');
+    //console.log('xxx');
   }
 
   render() {
@@ -38,18 +38,14 @@ class App extends Component {
     
     if(this.state.weather) {
       return ( 
-       
         <div className="App">
-
-                <Header />
-                <Home weather={this.state.weather} />
-                <Weather weather={this.state.weather} />
-                
-                {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
-
-
+          <Header />
+          <Resume />
+          <Home weather={this.state.weather} />
+          <Weather weather={this.state.weather} />        
+          {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
+          <Footer />
         </div>
-      
       );
     } else {
       return 'Loading...'
