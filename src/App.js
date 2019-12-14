@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from 'axios';
 //import DarkSky from 'dark-sky';
 import Footer from './Footer';
@@ -25,10 +26,7 @@ class App extends Component {
         const darkSkyData = res.data;
         this.setState({ weather: darkSkyData });
       });
-  }
-
-  log() {
-    //console.log('xxx');
+    /* fetch code examples */
   }
 
   render() {
@@ -39,12 +37,22 @@ class App extends Component {
     if(this.state.weather) {
       return ( 
         <div className="App">
-          <Header />
-          <Resume />
-          <Home weather={this.state.weather} />
-          <Weather weather={this.state.weather} />        
-          {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
-          <Footer />
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <Home weather={this.state.weather} />
+              </Route>
+              <Route path="/resume">
+                <Resume />
+              </Route>
+              <Route path="/weather">
+                <Weather weather={this.state.weather} />
+              </Route>      
+              {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
+            </Switch>
+            <Footer />
+          </Router>
         </div>
       );
     } else {

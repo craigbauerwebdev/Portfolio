@@ -5,3 +5,9 @@
 .center {
 	text-align: center;
 }
+.v-space-15 {
+	margin: 15px 0;
+}
+.v-space-30 {
+	margin: 30px 0;
+}

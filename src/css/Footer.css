@@ -1,0 +1,10 @@
+footer {
+  /*background: rgba(50, 58, 71, 1);*/
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
