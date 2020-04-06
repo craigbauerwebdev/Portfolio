@@ -14,13 +14,15 @@ class Icons extends Component {
           <Link to="/">
             <i className="large material-icons">home</i>
           </Link>
-          <Link to="/resume">
+          <Link to="/resume" title="Resume">
             <i className="large material-icons">list_alt</i>
           </Link>
           <Link to="/weather">
             <i className="large material-icons">wb_sunny</i>
           </Link>
-          <i className="large material-icons">code</i>
+          <Link to="/code">
+            <i className="large material-icons">code</i>
+          </Link>
           <i className="large material-icons">mail_outline</i>         
         </div>
         <Switch>

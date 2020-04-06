@@ -7,7 +7,7 @@ class Resume extends Component {
 
   render() {
     return (
-      <div id="resume-wrap" class="inner">
+      <div id="resume-wrap" className="inner">
         <Info />
         <hr />
         <h2>Experience</h2>
