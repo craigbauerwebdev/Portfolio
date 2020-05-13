@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import SyntaxHighlighter from 'react-syntax-highlighter';
+//import SyntaxHighlighter from 'react-syntax-highlighter';
 //import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+//import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import axios from 'axios';
+import Button from './ui-components/Button';
+import CodeExamples from './CodeExamples';
 //import DarkSky from 'dark-sky';
 import Footer from './Footer';
 import Header from './Header';
-import Home from './Home';
+import About from './About';
 import Resume from './Resume';
 import Weather from './Weather';
-import CodeExamples from './CodeExamples';
 import './css/App.css';
 
 //SyntaxHighlighter.registerLanguage('jsx', jsx);
 
-const ny = `41.115704,-74.149263`;
+//const ny = `41.115704,-74.149263`;
 
 class App extends Component {
   constructor(props) {
@@ -24,15 +25,20 @@ class App extends Component {
       date: new Date(),
       weather: '',
       codeData: '',
-      //testAPI: ''
+      testAPI: ''
     };
   }
 
-  /*callAPI() {
+  callAPI() {
     fetch('http://localhost:9000/testAPI')
       .then(res => res.text())
       .then(res => this.setState({ testAPI: res }));
-  }*/
+      /* .catch((error) => {
+        this.setState(
+          { testAPI: error }
+        )
+      }); */
+  }
 
   componentDidMount(){
 /*    axios.get(`https://api.darksky.net/forecast/1ed2786cd16aef53eb5e3a8b23c10a69/`+ny)
@@ -47,7 +53,7 @@ class App extends Component {
         console.log(res.data);
         this.setState({ codeData: codeData });
       });
-    //this.callAPI();
+    this.callAPI();
 
   }
 
@@ -61,9 +67,10 @@ class App extends Component {
         <div className="App">
           <Router>
             <Header />
+            <p>{this.state.testAPI}</p>
             <Switch>
               <Route exact path="/">
-                <Home />
+                <About />
               </Route>
               <Route path="/resume">
                 <Resume />
@@ -75,24 +82,24 @@ class App extends Component {
                 <CodeExamples data={this.state.codeData} />
               </Route>
               {this.state.codeData.map(function (single, index) {
-                  if( single.status === "publish" ) {
+                  if( single.status === "publish" || single.status === "draft" ) {
                     const route = "/" + single.slug;
-                    const codestring = single.content.rendered;
-                    const cleanString = codestring
+                    console.log("Single: ", single);
+                    //const codestring = single.content.rendered;
+                    /* const cleanString = codestring
                       .replace(/<pre class="wp-block-code"><code>/g, '')
-                      .replace(/<\/code><\/pre>/g, '')
+                      .replace(/<\/code><\/pre>/g, '') */
                       //.replace(/&lt;/g, '<');
                     const markup =
                       <Route key={index} path={route}>
-                        <pre>
-                          <div className="single-code">
-                            <Link to="/code">back to projects</Link>
-                            <div className="project-title">{single.title.rendered}</div>
-                            <SyntaxHighlighter language="jsx" style={docco}>
-                              {cleanString}
-                            </SyntaxHighlighter>
-                          </div>
-                        </pre>
+                        <div className="single-code">
+                          <Link to="/code">back to projects</Link>
+                          <h1 className="project-title">{single.title.rendered}</h1>
+                          <Button url="http://craigbauer.nyc" label="View On GITHUB" />
+                          {/* <SyntaxHighlighter language="jsx" style={docco}>
+                            {cleanString}
+                          </SyntaxHighlighter> */}
+                        </div> 
                       </Route>
                       return markup;
                   } 

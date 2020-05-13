@@ -8,10 +8,10 @@ class Info extends Component {
   render() {
     return (
       <div id="info-wrap">
-        <h2>8 Foxwood Avenue</h2>
-        <h2>Suffern, NY 10901</h2>
-        <h2>craigbauer23@gmail.com</h2>
-        <h2>(347) 742-2411</h2>
+        <h3>8 Foxwood Avenue</h3>
+        <h3>Suffern, NY 10901</h3>
+        <h3>craigbauer23@gmail.com</h3>
+        <h3>(347) 742-2411</h3>
       </div>
     );
   }

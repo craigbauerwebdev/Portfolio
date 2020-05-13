@@ -1,4 +1,7 @@
 /* Resume CSS */
+#resume-wrap h2 {
+	margin-top: 15px;
+}
 #info-wrap {
 	padding-bottom: 24px;
 }

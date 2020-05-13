@@ -7,8 +7,8 @@ class Info extends Component {
     return (
       <div id="info-wrap" className="center">
         <h1>Craig Bauer</h1>
-        <h2>8 Foxwood Avenue | Suffern, NY 10901</h2>
-        <h2>craigbauer23@gmail.com | (347) 742-2411</h2>
+        <h3>8 Foxwood Avenue | Suffern, NY 10901</h3>
+        <h3>craigbauer23@gmail.com | (347) 742-2411</h3>
       </div>
     );
   }

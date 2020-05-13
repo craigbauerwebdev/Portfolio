@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-//import Info from './Info';
 import './css/CodeExamples.css';
 
 
@@ -18,9 +17,9 @@ class CodeExamples extends Component {
             	  markup =
             	<Link key={index} to={slug}>
               	<div className="project" style={{ 
-              		backgroundImage: "url("+project.code_thumb+")", backgroundSize: "cover", backgroundPosition: "center"
-              	}}>
-              		<div className="project-title">{project.title.rendered}</div>
+              		  backgroundImage: "url("+project.code_thumb+")", backgroundSize: "cover", backgroundPosition: "center"
+              	  }}>
+              		<div className="project-title">{project.title.rendered}</div> 
               	</div>
 	            </Link>
               return markup;
