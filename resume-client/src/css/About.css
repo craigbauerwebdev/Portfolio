@@ -1,0 +1,23 @@
+#home-wrap {
+	text-align: center;
+	padding: 15px;
+	margin: 15px;
+}
+
+#home-wrap .bio {
+	margin: 0 auto;
+	padding: 15px;
+	max-width: 800px;
+}
+
+#home-wrap .me {
+	background-image: url(/assets/me.jpg);
+  	background-size: cover;
+  	background-position: top;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto 15px auto;
+}
+

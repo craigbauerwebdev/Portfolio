@@ -115,7 +115,13 @@ class App extends Component {
         </div>
       );
     } else {
-      return 'Loading...'
+      return (
+        <div className="loading-screen">
+          <div className="loader-wrap">
+            <div className="loader"></div>
+          </div>
+        </div>
+      );
     }
     
   }
