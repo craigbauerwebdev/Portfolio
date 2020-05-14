@@ -1,4 +1,4 @@
 # Portfolio
-This is my personal website which displays code, websites and applications that I have worked on. It is developed in React JS with wprdpress being used as a headless css and will include express and node for api endpoints.
+This is my personal website which displays code, websites and applications that I have built. It is developed in React JS with wordpress being used as a headless css and includes node/express for api endpoints. I will eventually move tha data over to mongo to get rid of WordPress and build a toll to manage the projects in Mongo.
 
-Working on this in my spare time. You can view the existing one here http://craigbauer.nyc
+This project is under construction. You can view the existing one here http://craigbauer.nyc
