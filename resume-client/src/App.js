@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-//import SyntaxHighlighter from 'react-syntax-highlighter';
-//import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-//import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import axios from 'axios';
 import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
@@ -12,11 +9,6 @@ import Header from './Header';
 import About from './About';
 import Resume from './Resume';
 import Contact from './Contact';
-import './css/App.css';
-
-//SyntaxHighlighter.registerLanguage('jsx', jsx);
-
-//const ny = `41.115704,-74.149263`;
 
 class App extends Component {
   constructor(props) {
@@ -117,8 +109,9 @@ class App extends Component {
     } else {
       return (
         <div className="loading-screen">
-          <div className="loader-wrap">
+          <div className="loader-wrap center">
             <div className="loader"></div>
+            <p>Just a second</p>
           </div>
         </div>
       );
