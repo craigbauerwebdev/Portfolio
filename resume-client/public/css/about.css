@@ -1,7 +1,5 @@
 #about-wrap {
-  text-align: center;
-  padding: 15px;
-  margin: 15px; }
+  text-align: center; }
   #about-wrap .bio-pic {
     background-image: url(/assets/me.jpg);
     background-size: cover;

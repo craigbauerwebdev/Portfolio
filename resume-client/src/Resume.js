@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Info from './ResumeComponents/Info';
-import './css/Resume.css';
-
+//import Summary from './ResumeComponents/Summary';
 
 class Resume extends Component {
-
   render() {
     return (
       <div id="resume-wrap" className="inner">

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './css/CodeExamples.css';
 
 
 class CodeExamples extends Component {

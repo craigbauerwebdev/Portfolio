@@ -57,9 +57,7 @@
     transform: rotate(360deg); } }
 
 #about-wrap {
-  text-align: center;
-  padding: 15px;
-  margin: 15px; }
+  text-align: center; }
   #about-wrap .bio-pic {
     background-image: url(/assets/me.jpg);
     background-size: cover;
@@ -93,3 +91,66 @@ body {
     content: "";
     display: table;
     clear: both; }
+  body .material-icons {
+    padding: 10px;
+    color: #fff; }
+  body .nav-icons {
+    margin-top: 15px; }
+  body button {
+    color: #fff;
+    background: #146db4;
+    border-radius: 5px;
+    padding: 15px 17px 15px 15px;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #525151;
+    margin: 0 10px 5px 10px; }
+
+#resume-wrap h2 {
+  margin-top: 15px; }
+
+#resume-wrap #info-wrap {
+  text-align: center;
+  padding-bottom: 24px; }
+
+header {
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  /* required */
+  z-index: 99;
+  text-align: center; }
+  header .nav-icons {
+    margin-top: 15px; }
+  header img {
+    max-width: 380px;
+    width: 100%;
+    height: auto; }
+
+footer {
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 15px;
+  text-align: center; }
+
+.project {
+  position: relative;
+  padding-top: 15%;
+  width: 23%;
+  margin: 1%;
+  float: left; }
+  .project .project-title {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 0; }

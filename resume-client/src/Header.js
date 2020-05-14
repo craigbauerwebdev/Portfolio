@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './css/Header.css';
 import Button from './ui-components/Button';
 import Icons from './ui-components/Icons';
 import { Link } from "react-router-dom";

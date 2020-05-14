@@ -18,4 +18,20 @@ body {
         display: table;
         clear: both;
     }
+    .material-icons {
+        padding: 10px;
+        color: #fff;
+    }
+    .nav-icons {
+        margin-top: 15px;
+    }
+    button {
+    color: #fff;
+    background: #146db4;
+    border-radius: 5px;
+    padding: 15px 17px 15px 15px;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #525151;
+    margin: 0 10px 5px 10px;
+    }
 }
