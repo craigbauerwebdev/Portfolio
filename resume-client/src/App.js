@@ -11,7 +11,7 @@ import Footer from './Footer';
 import Header from './Header';
 import About from './About';
 import Resume from './Resume';
-import Weather from './Weather';
+import Contact from './Contact';
 import './css/App.css';
 
 //SyntaxHighlighter.registerLanguage('jsx', jsx);
@@ -75,11 +75,11 @@ class App extends Component {
               <Route path="/resume">
                 <Resume />
               </Route>
-              <Route path="/weather">
-                <Weather weather={this.state.weather} />
-              </Route>
               <Route path="/code">
                 <CodeExamples data={this.state.codeData} />
+              </Route>
+              <Route path="/contact">
+                <Contact />
               </Route>
               {this.state.codeData.map(function (single, index) {
                   if( single.status === "publish" || single.status === "draft" ) {

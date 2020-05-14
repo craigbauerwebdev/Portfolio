@@ -16,13 +16,12 @@ class Icons extends Component {
           <Link to="/resume" title="Resume">
             <i className="large material-icons">list_alt</i>
           </Link>
-          <Link to="/weather">
-            <i className="large material-icons">wb_sunny</i>
-          </Link>
           <Link to="/code">
             <i className="large material-icons">code</i>
           </Link>
-          <i className="large material-icons">mail_outline</i>         
+          <Link to="/contact">
+            <i className="large material-icons">mail_outline</i>
+          </Link>       
         </div>
         <Switch>
           <Route exact path="/resume">
