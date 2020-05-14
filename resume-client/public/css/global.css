@@ -19,6 +19,17 @@ body {
     color: #fff; }
   body .nav-icons {
     margin-top: 15px; }
+  body .inner {
+    padding: 15px; }
+  body .center {
+    text-align: center; }
+  body .left {
+    float: left; }
+  body .right {
+    float: right; }
+  body .max-960 {
+    max-width: 960px;
+    margin: 0 auto; }
   body button {
     color: #fff;
     background: #146db4;

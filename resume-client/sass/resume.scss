@@ -1,9 +1,19 @@
 #resume-wrap {
     h2 {
-        margin-top: 15px;
+        margin: 15px 0;
+        text-decoration: underline;
     }
     #info-wrap {
         text-align: center;
         padding-bottom: 24px;
+    }
+    .job-description {
+        margin-bottom: 5px;
+    }
+    ul {
+        margin-left: 20px;
+        li {
+            margin-bottom: 5px;
+        }
     }
 }

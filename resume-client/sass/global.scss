@@ -25,6 +25,22 @@ body {
     .nav-icons {
         margin-top: 15px;
     }
+    .inner {
+        padding: 15px;
+    }
+    .center {
+        text-align: center;
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .max-960 {
+        max-width: 960px;
+        margin: 0 auto;
+    }
     button {
     color: #fff;
     background: #146db4;

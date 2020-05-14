@@ -8,7 +8,6 @@ header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  /* required */
   z-index: 99;
   text-align: center; }
   header .nav-icons {
@@ -17,3 +16,5 @@ header {
     max-width: 380px;
     width: 100%;
     height: auto; }
+  header .button-wrap {
+    margin-top: 15px; }

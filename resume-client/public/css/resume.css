@@ -1,6 +1,15 @@
 #resume-wrap h2 {
-  margin-top: 15px; }
+  margin: 15px 0;
+  text-decoration: underline; }
 
 #resume-wrap #info-wrap {
   text-align: center;
   padding-bottom: 24px; }
+
+#resume-wrap .job-description {
+  margin-bottom: 5px; }
+
+#resume-wrap ul {
+  margin-left: 20px; }
+  #resume-wrap ul li {
+    margin-bottom: 5px; }

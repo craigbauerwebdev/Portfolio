@@ -50,11 +50,8 @@ class App extends Component {
   }
 
   render() {
-
-    const today = new Date();
-    console.log(today);
-    
-    if(this.state.codeData) {
+    const {codeData} = this.state;
+    if(codeData) {
       return ( 
         <div className="App">
           <Router>
@@ -73,24 +70,17 @@ class App extends Component {
               <Route path="/contact">
                 <Contact />
               </Route>
-              {this.state.codeData.map(function (single, index) {
+              {/* <SingleCodeRoutes data={codeData} /> */}
+              {codeData.map(function (single, index) {
                   if( single.status === "publish" || single.status === "draft" ) {
                     const route = "/" + single.slug;
-                    console.log("Single: ", single);
-                    //const codestring = single.content.rendered;
-                    /* const cleanString = codestring
-                      .replace(/<pre class="wp-block-code"><code>/g, '')
-                      .replace(/<\/code><\/pre>/g, '') */
-                      //.replace(/&lt;/g, '<');
+                    //console.log("Single: ", single);
                     const markup =
                       <Route key={index} path={route}>
                         <div className="single-code">
                           <Link to="/code">back to projects</Link>
                           <h1 className="project-title">{single.title.rendered}</h1>
-                          <Button url="http://craigbauer.nyc" label="View On GITHUB" />
-                          {/* <SyntaxHighlighter language="jsx" style={docco}>
-                            {cleanString}
-                          </SyntaxHighlighter> */}
+                          <Button url={ single.button_url } label="View On GITHUB" type="popup" />
                         </div> 
                       </Route>
                       return markup;

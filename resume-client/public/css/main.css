@@ -96,6 +96,17 @@ body {
     color: #fff; }
   body .nav-icons {
     margin-top: 15px; }
+  body .inner {
+    padding: 15px; }
+  body .center {
+    text-align: center; }
+  body .left {
+    float: left; }
+  body .right {
+    float: right; }
+  body .max-960 {
+    max-width: 960px;
+    margin: 0 auto; }
   body button {
     color: #fff;
     background: #146db4;
@@ -106,11 +117,20 @@ body {
     margin: 0 10px 5px 10px; }
 
 #resume-wrap h2 {
-  margin-top: 15px; }
+  margin: 15px 0;
+  text-decoration: underline; }
 
 #resume-wrap #info-wrap {
   text-align: center;
   padding-bottom: 24px; }
+
+#resume-wrap .job-description {
+  margin-bottom: 5px; }
+
+#resume-wrap ul {
+  margin-left: 20px; }
+  #resume-wrap ul li {
+    margin-bottom: 5px; }
 
 header {
   background-image: url(/assets/space.jpg);
@@ -122,7 +142,6 @@ header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  /* required */
   z-index: 99;
   text-align: center; }
   header .nav-icons {
@@ -131,6 +150,8 @@ header {
     max-width: 380px;
     width: 100%;
     height: auto; }
+  header .button-wrap {
+    margin-top: 15px; }
 
 footer {
   background-image: url(/assets/space.jpg);
@@ -143,14 +164,41 @@ footer {
 
 .project {
   position: relative;
-  padding-top: 15%;
-  width: 23%;
-  margin: 1%;
+  padding-top: 16%;
+  width: 25%;
   float: left; }
-  .project .project-title {
+  .project .inner {
     position: absolute;
-    top: 70%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 0; }
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px #000 solid; }
+    .project .inner .project-title {
+      position: absolute;
+      top: 70%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px 0;
+      font-size: 14px; }
+
+@media screen and (max-width: 1100px) {
+  .project {
+    padding-top: 21%;
+    width: 33.3333%; } }
+
+@media screen and (max-width: 800px) {
+  .project {
+    padding-top: 30%;
+    width: 50%; } }
+
+@media screen and (max-width: 550px) {
+  .project {
+    padding-top: 60%;
+    width: 100%; }
+    .project .inner {
+      position: absolute;
+      right: 0;
+      left: 0; } }

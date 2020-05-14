@@ -1,13 +1,40 @@
 .project {
   position: relative;
-  padding-top: 15%;
-  width: 23%;
-  margin: 1%;
+  padding-top: 16%;
+  width: 25%;
   float: left; }
-  .project .project-title {
+  .project .inner {
     position: absolute;
-    top: 70%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 0; }
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px #000 solid; }
+    .project .inner .project-title {
+      position: absolute;
+      top: 70%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px 0;
+      font-size: 14px; }
+
+@media screen and (max-width: 1100px) {
+  .project {
+    padding-top: 21%;
+    width: 33.3333%; } }
+
+@media screen and (max-width: 800px) {
+  .project {
+    padding-top: 30%;
+    width: 50%; } }
+
+@media screen and (max-width: 550px) {
+  .project {
+    padding-top: 60%;
+    width: 100%; }
+    .project .inner {
+      position: absolute;
+      right: 0;
+      left: 0; } }
