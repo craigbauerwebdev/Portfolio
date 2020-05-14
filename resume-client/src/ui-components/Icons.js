@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import '../css/Icons.css';
 import Button from './Button';
-//import Logo from 'process.env.PUBLIC_URL + 'assets/CB-logo.png';
 
 class Icons extends Component {
   render() {

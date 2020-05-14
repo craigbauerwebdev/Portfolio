@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 //import ReactContactForm from 'react-mail-form';
-import './css/About.css';
-//import Button from './ui-components/Button';
-//import Weather from './Weather';
+
 
 class About extends Component {
 
   render() {
     return (
       <div id="home-wrap">
-        <div className="me"></div>
+        <div className="bio-pic"></div>
         <h1>Hello, My Name is Craig</h1>
         <h2>I'm a Frontend Web Developer</h2>
+        <img src="assets/mern.png" className="mern-stack" alt="mern stack" width="100%" />
         <div className="bio">
           <p>The default interactive shell is now zsh.
           To update your account to use zsh, please run `chsh -s /bin/zsh`.
