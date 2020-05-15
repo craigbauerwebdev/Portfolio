@@ -25,7 +25,7 @@ class Button extends Component {
       );
     } else {
       return (
-        <a href={url} target="_blank"><button>{label}</button></a>
+        <a href={url} rel="noopener noreferrer" target="_blank"><button>{label}</button></a>
       );
     }
   }

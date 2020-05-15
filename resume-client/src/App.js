@@ -14,30 +14,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
-      weather: '',
-      codeData: '',
-      testAPI: ''
+      myWork: null,
+      codeData: null,
+      testAPI: []
     };
   }
 
-  callAPI() {
-    fetch('http://localhost:9000/testAPI')
-      .then(res => res.text())
-      .then(res => this.setState({ testAPI: res }));
-      /* .catch((error) => {
-        this.setState(
-          { testAPI: error }
-        )
-      }); */
+  callMyWorkAPI() {
+    axios.get(`http://localhost:9000/myworkAPI`)
+      .then(res => {
+        //console.log(res);
+        const work = res.data;
+        this.setState({ myWork: work });
+      });
+  }
+
+  callCodeAPI() {
+    axios.get(`http://localhost:9000/codeAPI`)
+      .then(res => {
+        //console.log(res);
+        const code = res.data;
+        this.setState({ codeExamples: code });
+      });
   }
 
   componentDidMount(){
-/*    axios.get(`https://api.darksky.net/forecast/1ed2786cd16aef53eb5e3a8b23c10a69/`+ny)
+    /* axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/web/`)
       .then(res => {
-        const darkSkyData = res.data;
-        this.setState({ weather: darkSkyData });
-      });*/
+        const websites = res.data;
+        this.setState({ web: websites });
+      }); */
 
     axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/code/`)
     .then(res => {
@@ -45,13 +51,13 @@ class App extends Component {
         console.log(res.data);
         this.setState({ codeData: codeData });
       });
-    this.callAPI();
-
+    this.callMyWorkAPI();
+    this.callCodeAPI();
   }
 
   render() {
-    const {codeData} = this.state;
-    if(codeData) {
+    const {codeData, myWork} = this.state;
+    if (codeData && myWork) {
       return ( 
         <div className="App">
           <Router>
