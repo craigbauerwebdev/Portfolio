@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
     this.state = {
       myWork: null,
-      codeData: null,
+      codeExamples: null,
       testAPI: []
     };
   }
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   callCodeAPI() {
-    axios.get(`http://localhost:9000/codeAPI`)
+    axios.get(`http://localhost:9000/codeExamplesAPI`)
       .then(res => {
         //console.log(res);
         const code = res.data;
@@ -45,19 +45,19 @@ class App extends Component {
         this.setState({ web: websites });
       }); */
 
-    axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/code/`)
+   /*  axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/code/`)
     .then(res => {
         const codeData = res.data;
         console.log(res.data);
         this.setState({ codeData: codeData });
-      });
+      }); */
     this.callMyWorkAPI();
-    this.callCodeAPI();
+    this.callCodeAPI(); //create route in node then wire it up
   }
 
   render() {
-    const {codeData, myWork} = this.state;
-    if (codeData && myWork) {
+    const {codeExamples, myWork} = this.state;
+    if (codeExamples && myWork) {
       return ( 
         <div className="App">
           <Router>
@@ -71,13 +71,13 @@ class App extends Component {
                 <Resume />
               </Route>
               <Route path="/code">
-                <CodeExamples data={this.state.codeData} />
+                <CodeExamples data={this.state.codeExamples} />
               </Route>
               <Route path="/contact">
                 <Contact />
               </Route>
               {/* <SingleCodeRoutes data={codeData} /> */}
-              {codeData.map(function (single, index) {
+              {codeExamples.map(function (single, index) {
                   if( single.status === "publish" || single.status === "draft" ) {
                     const route = "/" + single.slug;
                     //console.log("Single: ", single);
