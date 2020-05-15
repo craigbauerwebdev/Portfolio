@@ -21,6 +21,10 @@ body {
     margin-top: 15px; }
   body .inner {
     padding: 15px; }
+  body .related-projects #code-examples.inner {
+    padding: 0 5px 10px 5px; }
+  body .related-projects h2.more-projects {
+    padding: 15px 15px 0 15px; }
   body .center {
     text-align: center; }
   body .left {

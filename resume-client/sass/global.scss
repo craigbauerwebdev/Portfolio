@@ -28,6 +28,14 @@ body {
     .inner {
         padding: 15px;
     }
+    .related-projects {
+        #code-examples.inner {
+            padding: 0 5px 10px 5px;
+        }
+        h2.more-projects {
+            padding: 15px 15px 0 15px;
+        }
+    }
     .center {
         text-align: center;
     }

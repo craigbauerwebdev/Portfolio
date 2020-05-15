@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from 'axios';
 import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
-//import DarkSky from 'dark-sky';
+import WebExamples from './WebExamples';
+//import SingleCodeRoutes from './SingleCodeRoutes';
 import Footer from './Footer';
 import Header from './Header';
 import About from './About';
@@ -25,7 +26,7 @@ class App extends Component {
       .then(res => {
         //console.log(res);
         const work = res.data;
-        this.setState({ myWork: work });
+        this.setState({ webExamples: work });
       });
   }
 
@@ -39,25 +40,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    /* axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/web/`)
-      .then(res => {
-        const websites = res.data;
-        this.setState({ web: websites });
-      }); */
-
-   /*  axios.get(`https://cors-anywhere.herokuapp.com/http://craigbauer.nyc/wp-json/wp/v2/code/`)
-    .then(res => {
-        const codeData = res.data;
-        console.log(res.data);
-        this.setState({ codeData: codeData });
-      }); */
     this.callMyWorkAPI();
     this.callCodeAPI(); //create route in node then wire it up
   }
 
   render() {
-    const {codeExamples, myWork} = this.state;
-    if (codeExamples && myWork) {
+    const {codeExamples, webExamples} = this.state;
+    if (codeExamples && webExamples) {
       return ( 
         <div className="App">
           <Router>
@@ -70,34 +59,69 @@ class App extends Component {
               <Route path="/resume">
                 <Resume />
               </Route>
+              <Route path="/websites">
+                <h1>Web Sites</h1>
+                <WebExamples data={this.state.webExamples} />
+              </Route>
               <Route path="/code">
+                <h1>Code Examples</h1>
                 <CodeExamples data={this.state.codeExamples} />
               </Route>
               <Route path="/contact">
                 <Contact />
               </Route>
-              {/* <SingleCodeRoutes data={codeData} /> */}
-              {codeExamples.map(function (single, index) {
-                  if( single.status === "publish" || single.status === "draft" ) {
+              {
+                codeExamples.map(function (single, index) {
+                  if (single.status === "publish" || single.status === "draft") {
                     const route = "/" + single.slug;
                     //console.log("Single: ", single);
                     const markup =
                       <Route key={index} path={route}>
-                        <div className="single-code">
+                        <div className="single-code inner">
                           <Link to="/code">back to projects</Link>
                           <h1 className="project-title">{single.title.rendered}</h1>
-                          <Button url={ single.button_url } label="View On GITHUB" type="popup" />
-                        </div> 
+                          <Button url={single.button_url} label="View On GITHUB" type="popup" />
+                          <div dangerouslySetInnerHTML={{__html: single.excerpt.rendered}}></div>
+                        </div>
+                        <div className="related-projects">                    
+                          <h2 className="more-projects">More Projects</h2>
+                          <CodeExamples data={codeExamples} />
+                        </div>
                       </Route>
-                      return markup;
-                  } 
+                    return markup;
+                  }
                   return false;
-              })}
+                })
+              }
+              {
+                webExamples.map(function (single, index) {
+                  if (single.status === "publish") {
+                    const route = "/" + single.slug;
+                    //console.log("Single: ", single);
+                    const markup =
+                      <Route key={index} path={route}>
+                        <div className="single-code inner">
+                          <Link to="/websites">back to projects</Link>
+                          <h1 className="project-title">{single.title.rendered}</h1>
+                          <Button url={single.button_url} label="View On GITHUB" type="popup" />
+                          <div dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
+                        </div>
+                        <div className="related-projects">
+                          <h2 className="more-projects">Related Projects</h2>
+                          <WebExamples data={webExamples} />
+                        </div>
+                      </Route>
+                    return markup;
+                  }
+                  return false;
+                })
+              }
               <Route>
                 <h1>404 Page Not Found</h1>
               </Route>  
               {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
             </Switch>
+            {/* <SingleCodeRoutes codeExamples={codeExamples} /> */}
             <Footer />
           </Router>
         </div>
