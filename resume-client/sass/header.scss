@@ -4,7 +4,7 @@ header {
     background-position: center;
     background-attachment: fixed;
     color: #fff;
-    padding: 15px;
+    padding: 25px 15px 6px 15px;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
@@ -17,8 +17,5 @@ header {
         max-width: 380px;
         width: 100%;
         height: auto;
-    }
-    .button-wrap {
-        margin-top: 15px;
     }
 }

@@ -8,7 +8,7 @@ class WebExamples extends Component {
   	const{ data } = this.props;
   	console.log(data);
     return (
-      <div id="code-examples" className="inner center">
+      <div id="examples" className="inner center">
       	{data.map(function (project, index) {
             if( project.status === "publish" ) {
             	const 
@@ -17,7 +17,7 @@ class WebExamples extends Component {
             	<Link key={index} to={slug}>
               	<div className="project">
                     <div className="inner" style={{
-                      backgroundImage: "url(" + project.code_thumb + ")", backgroundSize: "cover", backgroundPosition: "center"
+                      backgroundImage: "url(" + project.thumbnail + ")", backgroundSize: "cover", backgroundPosition: "top"
                     }}>
               		  <div className="project-title center">{project.title.rendered}</div>
                   </div>

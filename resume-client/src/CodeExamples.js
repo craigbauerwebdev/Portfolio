@@ -8,7 +8,7 @@ class CodeExamples extends Component {
   	const{ data } = this.props;
   	console.log(data);
     return (
-      <div id="code-examples" className="inner center">
+      <div id="examples" className="inner center">
       	{data.map(function (project, index) {
             if( project.status === "publish" || project.status === "draft" ) {
             	const 

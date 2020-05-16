@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './ui-components/Button';
 import Info from './ResumeComponents/Info';
 import Summary from './ResumeComponents/Summary';
 
@@ -6,6 +7,10 @@ class Resume extends Component {
   render() {
     return (
       <div id="resume-wrap" className="inner max-960">
+        <div className="button-wrap">
+          <Button url="http://craigbauer.nyc" label="Download PDF Resume" />
+          <Button url="http://craigbauer.nyc" label="Download Word Resume" />
+        </div>
         <Info />
         <hr />
         <Summary title="Summary" body="Web Developer with over 10 years of experience in website design and implementation, desktop/ mobile web application development, and the completion of hundreds of complex web applications." />

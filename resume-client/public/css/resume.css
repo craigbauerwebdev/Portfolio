@@ -13,3 +13,7 @@
   margin-left: 20px; }
   #resume-wrap ul li {
     margin-bottom: 5px; }
+
+#resume-wrap .button-wrap {
+  text-align: center;
+  margin: 15px 0; }

@@ -98,10 +98,16 @@ body {
     margin-top: 15px; }
   body .inner {
     padding: 15px; }
-  body .related-projects #code-examples.inner {
-    padding: 0 5px 10px 5px; }
   body .related-projects h2.more-projects {
     padding: 15px 15px 0 15px; }
+  body #examples.inner {
+    padding: 0 5px 10px 5px; }
+  body .page-title {
+    padding: 15px 15px 0 15px; }
+    body .page-title h1 {
+      padding: 15px 0 0 0; }
+  body #nav-description {
+    height: 18px; }
   body .center {
     text-align: center; }
   body .left {
@@ -136,13 +142,17 @@ body {
   #resume-wrap ul li {
     margin-bottom: 5px; }
 
+#resume-wrap .button-wrap {
+  text-align: center;
+  margin: 15px 0; }
+
 header {
   background-image: url(/assets/space.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: #fff;
-  padding: 15px;
+  padding: 25px 15px 6px 15px;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -154,8 +164,6 @@ header {
     max-width: 380px;
     width: 100%;
     height: auto; }
-  header .button-wrap {
-    margin-top: 15px; }
 
 footer {
   background-image: url(/assets/space.jpg);

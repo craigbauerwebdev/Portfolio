@@ -4,7 +4,7 @@ import axios from 'axios';
 import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
 import WebExamples from './WebExamples';
-//import SingleCodeRoutes from './SingleCodeRoutes';
+import SingleExample from './SingleExample';
 import Footer from './Footer';
 import Header from './Header';
 import About from './About';
@@ -60,11 +60,15 @@ class App extends Component {
                 <Resume />
               </Route>
               <Route path="/websites">
-                <h1>Web Sites</h1>
+                <div className="page-title">
+                  <h1>Web Sites</h1>
+                </div>
                 <WebExamples data={this.state.webExamples} />
               </Route>
               <Route path="/code">
-                <h1>Code Examples</h1>
+                <div className="page-title">
+                  <h1>Code Examples</h1>
+                </div>
                 <CodeExamples data={this.state.codeExamples} />
               </Route>
               <Route path="/contact">
@@ -72,11 +76,12 @@ class App extends Component {
               </Route>
               {
                 codeExamples.map(function (single, index) {
+                  
                   if (single.status === "publish" || single.status === "draft") {
                     const route = "/" + single.slug;
-                    //console.log("Single: ", single);
                     const markup =
                       <Route key={index} path={route}>
+                        {/* <SingleExample single={single} /> */}
                         <div className="single-code inner">
                           <Link to="/code">back to projects</Link>
                           <h1 className="project-title">{single.title.rendered}</h1>
@@ -97,13 +102,13 @@ class App extends Component {
                 webExamples.map(function (single, index) {
                   if (single.status === "publish") {
                     const route = "/" + single.slug;
-                    //console.log("Single: ", single);
                     const markup =
                       <Route key={index} path={route}>
+                        {/* <SingleExample single={single} /> */}
                         <div className="single-code inner">
                           <Link to="/websites">back to projects</Link>
                           <h1 className="project-title">{single.title.rendered}</h1>
-                          <Button url={single.button_url} label="View On GITHUB" type="popup" />
+                          <Button url={single.link} label="View Project" type="popup" />
                           <div dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
                         </div>
                         <div className="related-projects">
