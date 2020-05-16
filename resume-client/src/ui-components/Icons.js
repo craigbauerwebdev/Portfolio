@@ -53,10 +53,7 @@ class Icons extends Component {
             <i className="large material-icons">mail_outline</i>
           </Link>       
         </div>
-
           <div id="nav-description">{this.state.navDescription}</div>
-          
-
       </div>
     );
   }

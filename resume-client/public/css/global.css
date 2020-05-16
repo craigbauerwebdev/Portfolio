@@ -40,6 +40,10 @@ body {
   body .max-960 {
     max-width: 960px;
     margin: 0 auto; }
+  body .v-space-30 {
+    margin: 30px 0; }
+  body .social-icons {
+    margin-top: 15px; }
   body button {
     color: #fff;
     background: #146db4;

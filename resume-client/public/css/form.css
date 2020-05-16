@@ -1,0 +1,20 @@
+#contact-form fieldset {
+  border: none; }
+
+#contact-form input, #contact-form textarea {
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  margin: 24px 0;
+  width: calc(100% - 24px);
+  max-width: 960px;
+  border: 1px #aaa solid; }
+
+#contact-form button {
+  margin: 0 0 5px 0; }
+
+#contact-wrap h2 {
+  margin: 15px 0 5px 0; }
+
+#contact-wrap p {
+  margin: 5px 0; }
