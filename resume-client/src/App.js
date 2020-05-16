@@ -76,7 +76,6 @@ class App extends Component {
               </Route>
               {
                 codeExamples.map(function (single, index) {
-                  
                   if (single.status === "publish" || single.status === "draft") {
                     const route = "/" + single.slug;
                     const markup =

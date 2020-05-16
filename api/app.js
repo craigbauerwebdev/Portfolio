@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,12 +24,47 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extend: true}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/myworkAPI', myworkAPIRouter);
 app.use('/codeExamplesAPI', codeExamplesAPIRouter);
 app.use('/testAPI', testAPIRouter);
+
+app.post('/submitform', (req, res) => {
+  // Instantiate the SMTP server
+  /* const smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'craigbauer23@gmail.com',
+      pass: 'xxx'
+    }
+  }) */
+
+  // Specify what the email will look like
+  /* const mailOpts = {
+    from: 'user', // This is ignored by Gmail
+    to: Craig Bauer,
+    subject: 'New message from contact form at craigbauerwebdev.com',
+    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  } */
+
+  //res.send(`${req.body.name} (${req.body.email}) says: ${req.body.message}`)
+  res.send('success');
+
+  // Attempt to send the email
+  /* smtpTrans.sendMail(mailOpts, (error, response) => {
+    if (error) {
+      res.send('contact-failure') // Send failure
+    }
+    else {
+      res.send('contact-success') // Send success
+    }
+  }) */
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

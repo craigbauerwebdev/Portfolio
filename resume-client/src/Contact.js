@@ -5,11 +5,30 @@ import Social from './ui-components/Social';
 
 class Contact extends Component {
 
+/*   submitForm() {
+    axios.get(`http://localhost:9000/submitform`,
+    {
+      method: 'POST',
+      body: {
+        name: 'Craig',
+        email: 'eee',
+        message: 'mmm'
+      }
+    })
+    .then(res => {
+      console.log(res);
+    });
+  }
+
+  componentDidMount() {
+    this.submitForm();
+  } */
+
   render() { 
     return (
       <div id="contact-wrap" className="inner">
         <h1>Contact Me</h1>
-        <div></div>
+        <div className="bio-pic"></div>
         <div>
           <h2>Craig Bauer</h2>
           <p><b>JavaScript Developer</b></p>
@@ -20,9 +39,10 @@ class Contact extends Component {
         </div>
         <Social theme="dark" height="24px" />
         <p>or fill out the form below:</p>
-        <form action="/contact" id="contact-form" method="post">
+        <form action="http://localhost:9000/submitform" id="contact-form" method="post">
            {/*  <label for="name">Name</label> */}
-            <input
+            <input // use onChange to store in your state
+              
               id="name"
               name="name"
               type="text"
@@ -45,8 +65,7 @@ class Contact extends Component {
                 rows="3"
                 required>
               </textarea>
-              <button type="submit">Submit</button>
-        
+              <button type="submit">Submit Your Message</button>
         </form >
       </div>
     );
