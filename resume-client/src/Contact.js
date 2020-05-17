@@ -10,9 +10,9 @@ class Contact extends Component {
     {
       method: 'POST',
       body: {
-        name: 'Craig',
-        email: 'eee',
-        message: 'mmm'
+        name: this.state.name,
+        email: this.state.email,
+        message: this.state.message
       }
     })
     .then(res => {
@@ -28,7 +28,7 @@ class Contact extends Component {
     return (
       <div id="contact-wrap" className="inner">
         <h1>Contact Me</h1>
-        <div className="bio-pic"></div>
+        <div className="contact-pic"></div>
         <div>
           <h2>Craig Bauer</h2>
           <p><b>JavaScript Developer</b></p>
@@ -39,10 +39,9 @@ class Contact extends Component {
         </div>
         <Social theme="dark" height="24px" />
         <p>or fill out the form below:</p>
-        <form action="http://localhost:9000/submitform" id="contact-form" method="post">
+        <form action="http://localhost:9000/sendFormAPI" id="contact-form" method="post">
            {/*  <label for="name">Name</label> */}
             <input // use onChange to store in your state
-              
               id="name"
               name="name"
               type="text"

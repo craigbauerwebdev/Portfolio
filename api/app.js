@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var myworkAPIRouter = require('./routes/myworkAPI');
 var codeExamplesAPIRouter = require('./routes/codeExamplesAPI');
+var sendFormRouter = require('./routes/sendFormAPI');
 
 var app = express();
 
@@ -30,41 +31,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/myworkAPI', myworkAPIRouter);
 app.use('/codeExamplesAPI', codeExamplesAPIRouter);
+app.use('/sendFormAPI', sendFormRouter);
 app.use('/testAPI', testAPIRouter);
-
-app.post('/submitform', (req, res) => {
-  // Instantiate the SMTP server
-  /* const smtpTrans = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'craigbauer23@gmail.com',
-      pass: 'xxx'
-    }
-  }) */
-
-  // Specify what the email will look like
-  /* const mailOpts = {
-    from: 'user', // This is ignored by Gmail
-    to: Craig Bauer,
-    subject: 'New message from contact form at craigbauerwebdev.com',
-    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-  } */
-
-  //res.send(`${req.body.name} (${req.body.email}) says: ${req.body.message}`)
-  res.send('success');
-
-  // Attempt to send the email
-  /* smtpTrans.sendMail(mailOpts, (error, response) => {
-    if (error) {
-      res.send('contact-failure') // Send failure
-    }
-    else {
-      res.send('contact-success') // Send success
-    }
-  }) */
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
