@@ -7,7 +7,10 @@ import Social from './ui-components/Social';
 class Contact extends Component {
 constructor(props) {
   super(props);
-  this.state = {}
+  this.state = {
+    showForm: true,
+    showMessage: false
+  }
 }
 /*   submitForm() {
     axios.get(`http://localhost:9000/submitform`,
@@ -42,7 +45,7 @@ constructor(props) {
     console.log(this.state.name, this.state.email, this.state.message );
     //form validation
     // validate email before check
-    
+
     if(this.state.name && this.state.email && this.state.message) {
       axios.post(`http://localhost:9000/sendFormAPI`, {
         name: this.state.name,
@@ -52,7 +55,11 @@ constructor(props) {
       .then(res => {
         //console.log(res);
         //const work = res.data;
-        this.setState({ resMessage: res.data });
+        this.setState({ 
+          resMessage: res.data,
+          showForm: false,
+          showMessage: true
+        });
         alert(this.state.resMessage);
       });
       // clear the form fields

@@ -2,18 +2,30 @@
   margin: 15px 0;
   text-decoration: underline; }
 
+#resume-wrap h3 {
+  margin-bottom: 2px; }
+
 #resume-wrap #info-wrap {
   text-align: center;
   padding-bottom: 24px; }
 
+#resume-wrap .freelance-title {
+  float: left; }
+
 #resume-wrap .job-description {
-  margin-bottom: 5px; }
+  margin-bottom: 8px; }
 
 #resume-wrap ul {
   margin-left: 20px; }
   #resume-wrap ul li {
     margin-bottom: 5px; }
 
+#resume-wrap ul.col {
+  width: calc(20% - 20px);
+  float: left; }
+
 #resume-wrap .button-wrap {
   text-align: center;
   margin: 15px 0; }
+  #resume-wrap .button-wrap button {
+    margin: 0 10px 5px 10px; }
