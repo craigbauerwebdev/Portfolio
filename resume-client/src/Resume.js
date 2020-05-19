@@ -8,8 +8,8 @@ class Resume extends Component {
     return (
       <div id="resume-wrap" className="inner max-960">
         <div className="button-wrap">
-          <Button url="http://craigbauer.nyc" label="Download PDF Resume" />
-          <Button url="http://craigbauer.nyc" label="Download Word Resume" />
+          <Button url="http://craigbauer.nyc/resume/CraigBauerResume.pdf" label="Download PDF Resume" />
+          {/* <Button url="http://craigbauer.nyc" label="Download Word Resume" /> */}
         </div>
         <Info />
         <hr />
@@ -30,17 +30,26 @@ class Resume extends Component {
             <li>WP Rest API</li>
           </ul>
           <ul className="col">
-            <li>skills here</li>
+            <li>React JS</li>
+            <li>Redux</li>
+            <li>Node JS/ Express</li>
+            <li>jQuery</li>
           </ul>
           <ul className="col">
-            <li>skills here</li>
+            <li>GIT/ GIT Hub</li>
+            <li>Bootstrap</li>
+            <li>Foundation</li>
+            <li>Shopify</li>
           </ul>
           <ul className="col">
-            <li>skills here</li>
+            <li>PhotoShop</li>
+            <li>Illustrator</li>
+            <li>InDesign</li>
+            <li>Typography</li>
           </ul>
         </div>
         <br />
-        <h2>Experience</h2>
+        <h2>Professional Experience</h2>
         <h3>Townsquare Media</h3>
         <p className="job-description group"><i className="left">Front End Web Developer</i><i className="right">September 2015 – March 2020</i></p>
         <ul>
@@ -66,8 +75,26 @@ class Resume extends Component {
         
         <p className="job-description group"><h3 className="freelance-title">Freelance Front-End Web Developer/Designer</h3><i className="right">January 2006 – March 2014</i></p>
         <ul>
-          <li>Stuff</li>
-          <li></li>
+          <li>Managed multiple freelance web development projects for many clients. Selected projects include:
+            <ul>
+              <li><b>Spotzot</b>
+                <ul>
+                  <li>Developed a WordPress website with back-end access to ensure future development and design changes for company employees.</li>
+                  <li>Designed a custom WordPress theme based on custom templates, fields, and post types.</li>
+                  <li>Developed JavaScript and jQuery components to enable interaction with the site content.</li>
+                  <li>Optimized company search engine rankings, increasing visibility and company initiatives.</li>
+                </ul>
+              </li>
+              <li><b>Aaron Max Designs</b>
+                <ul>
+                  <li>Developed business websites on platforms like WordPress with integrated graphics, utilizing the Adobe Creative Suite and web standards to provide striking graphics and functionality.</li>
+                  <li>Utilized Adobe Illustrator to vector hand-drawn logos and graphics.</li>
+                  <li>Provided ongoing support and maintenance for the websites, troubleshooting any issues to ensure optimal operational performance.</li>
+                </ul>
+              </li>  
+              <li><b>Others:</b> Coney Island Saucery (2019), Finesse (2015), Hot Sauce Willie’s (2013 – 2015), Chelsea Guitars (2014), Takashi NYC (2013), Mud Village (2012), Mountain Cat Guitars(2011)</li>
+            </ul>
+          </li>
         </ul>
         <h2>Education</h2>
         <h3>Coursework in Communications Design and Web Development, 2011 – 2013</h3>
@@ -83,6 +110,7 @@ class Resume extends Component {
           <li>Kingsborough Community College</li>
         </ul>
       </div>
+     /*  <Button url="/contact" label="Contact Me" /> */
     );
   }
 }

@@ -21,6 +21,15 @@ class App extends Component {
     };
   }
 
+  callSiteOptions() {
+    axios.get(`http://localhost:9000/profileSettings`)
+      .then(res => {
+        //console.log(res);
+        const options = res.data;
+        this.setState({ settings: options });
+      });
+  }
+
   callMyWorkAPI() {
     axios.get(`http://localhost:9000/myworkAPI`)
       .then(res => {
@@ -41,12 +50,13 @@ class App extends Component {
 
   componentDidMount(){
     this.callMyWorkAPI();
-    this.callCodeAPI(); //create route in node then wire it up
+    this.callCodeAPI();
+    this.callSiteOptions();
   }
 
   render() {
-    const {codeExamples, webExamples} = this.state;
-    if (codeExamples && webExamples) {
+    const {codeExamples, webExamples, settings} = this.state;
+    if (codeExamples && webExamples && settings) {
       return ( 
         <div className="App">
           <Router>
@@ -54,7 +64,7 @@ class App extends Component {
             <p>{this.state.testAPI}</p>
             <Switch>
               <Route exact path="/">
-                <About />
+                <About settings={settings[0]} />
               </Route>
               <Route path="/resume">
                 <Resume />
@@ -72,7 +82,7 @@ class App extends Component {
                 <CodeExamples data={this.state.codeExamples} />
               </Route>
               <Route path="/contact">
-                <Contact />
+                <Contact settings={settings[0]} />
               </Route>
               {
                 codeExamples.map(function (single, index) {
@@ -82,8 +92,9 @@ class App extends Component {
                       <Route key={index} path={route}>
                         {/* <SingleExample single={single} /> */}
                         <div className="single-code inner">
-                          <Link to="/code">back to projects</Link>
+                          {/* <Link to="/code">back to projects</Link> */}
                           <h1 className="project-title">{single.title.rendered}</h1>
+                          <img alt={single.slug} src={single.code_thumb} />
                           <Button url={single.button_url} label="View On GITHUB" type="popup" />
                           <div dangerouslySetInnerHTML={{__html: single.excerpt.rendered}}></div>
                         </div>

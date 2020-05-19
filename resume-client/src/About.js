@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 class About extends Component {
 
   render() {
+    const { settings } = this.props;
     return (
       <div id="about-wrap" className="inner">
         <div className="bio-pic"></div>
@@ -12,12 +13,7 @@ class About extends Component {
         <h2>I'm a Frontend Web Developer</h2>
         <img src="assets/mern.png" className="mern-stack" alt="mern stack" width="100%" />
         <div className="bio">
-          <p>The default interactive shell is now zsh.
-          To update your account to use zsh, please run `chsh -s /bin/zsh`.
-          For more details, please visit https://support.apple.com/kb/HT208050.
-          MacBook-Pro:resume-client craigbauer$ cd ..
-          MacBook-Pro:resume craigbauer$ cd api
-          MacBook-Pro:api craigbauer$ npm start</p>
+          <p>{settings.bio}</p>
         </div>
         {/*<ReactContactForm to="craigbauer23@gmail.com" />*/}
        {/*  <Weather weather={this.props.weather} /> */}
