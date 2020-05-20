@@ -3,7 +3,7 @@ import axios from 'axios';
 import Social from './ui-components/Social';
 //import { Redirect } from 'react-router-dom';
 //import './css/Weather.css';
-import { BrowserRouter as Link } from "react-router-dom";
+//import { BrowserRouter as Link } from "react-router-dom";
 import Button from './ui-components/Button';
 
 class Contact extends Component {
@@ -88,7 +88,7 @@ class Contact extends Component {
             <p>
               <a href={mailto}>{settings.main_email}</a>
             </p>
-            <Social theme="dark" height="24px" />
+            <Social github={settings.gitHub_url} linkedin={settings.linkedin_url} theme="dark" height="24px" />
           </div>
         </div>
         
@@ -97,12 +97,13 @@ class Contact extends Component {
           <p>or fill out the form below:</p>
           <form id="contact-form">
             {/*  <label for="name">Name</label> */}
+            <i>All fields are required</i>
               <input // use onChange to store in your state
                 onChange={this.handleInputChange}
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
+                placeholder="Your name*"
                 required />
 
               {/* <label for="email">Email</label> */}
@@ -111,7 +112,7 @@ class Contact extends Component {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Your email"
+                  placeholder="Your email*"
                   required />
 
             {/*  <label for="message">Message</label> */}
@@ -119,7 +120,7 @@ class Contact extends Component {
                   onChange={this.handleInputChange}
                   id="message"
                   name="message"
-                  placeholder="Enter your message here"
+                  placeholder="Enter your message here*"
                   rows="3"
                   required>
                 </textarea>

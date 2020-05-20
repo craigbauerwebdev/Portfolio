@@ -4,12 +4,13 @@ import axios from 'axios';
 import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
 import WebExamples from './WebExamples';
-import SingleExample from './SingleExample';
+//import SingleExample from './SingleExample';
 import Footer from './Footer';
 import Header from './Header';
 import About from './About';
 import Resume from './Resume';
 import Contact from './Contact';
+import Dashboard from './dashboard/Dashboard';
 
 class App extends Component {
   constructor(props) {
@@ -84,6 +85,9 @@ class App extends Component {
               <Route path="/contact">
                 <Contact settings={settings[0]} />
               </Route>
+              <Route path="/dashboard">
+                <Dashboard settings={settings[0]} />
+              </Route>
               {
                 codeExamples.map(function (single, index) {
                   if (single.status === "publish" || single.status === "draft") {
@@ -137,7 +141,7 @@ class App extends Component {
               {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
             </Switch>
             {/* <SingleCodeRoutes codeExamples={codeExamples} /> */}
-            <Footer />
+            <Footer settings={settings[0]} />
           </Router>
         </div>
       );
