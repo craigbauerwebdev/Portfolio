@@ -85,6 +85,14 @@ app.get('/profileSettings', (req, res) => {
   });
 });
 
+app.put('/profileSettings', (req, res) => {
+  console.log('put request made for profile settings');
+  //get object sent
+  // send back object and re set state with updated values in put res
+  res.send(req.body);
+  //res.json({hi: 'there'});
+})
+
 
 
 

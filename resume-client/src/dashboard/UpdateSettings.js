@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 //import { Link } from "react-router-dom";
 
 class UpdateSettings extends Component {
@@ -20,9 +21,19 @@ class UpdateSettings extends Component {
         })
     }
 
-    submitUpdate(event) {
+    submitUpdate = (event) => {
         event.preventDefault();
         console.log('submit changes to mongo');
+
+        axios.put('http://localhost:9000/profileSettings', {
+            main_email: this.state.main_email,
+            bio: this.state.bio
+        })
+        .then((response) => {
+            console.log(response);
+        }, (error) => {
+            console.log(error);
+        });
     }
 
     handleInputChange = (event) => {

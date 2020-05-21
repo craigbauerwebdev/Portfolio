@@ -4,30 +4,6 @@ import UpdateSettings from './UpdateSettings';
 //import AddNewWebExample from './AddNewWebExample';
 
 class Dashboard extends Component {
-    /* constructor(props) {
-        super(props);
-        this.state = {
-            main_email: null
-        }
-    } */
-
-    /* componentDidMount() {
-        const { settings } = this.props;
-        this.setState({
-            main_email: settings.main_email
-        })
-    } */
-
-/*     handleInputChange = (event) => {
-        const
-            target = event.target,
-            name = target.name,
-            value = target.value;
-        this.setState({
-            [name]: value
-        });
-    } */
-
     render() {
         const { settings } = this.props;
         return (
