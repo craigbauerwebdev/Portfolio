@@ -11,13 +11,15 @@ class UpdateSettings extends Component {
     componentDidMount() {
         const { settings } = this.props;
         this.setState({
+            ...settings
+            /* id: settings._id,
             main_email: settings.main_email,
             bio: settings.bio,
             bio_intro: settings.bio_intro,
             bio_tagline: settings.bio_tagline,
             bio_pic: settings.bio_pic,
             gitHub_url: settings.gitHub_url,
-            linkedin_url: settings.linkedin_url
+            linkedin_url: settings.linkedin_url */
         })
     }
 
@@ -25,12 +27,14 @@ class UpdateSettings extends Component {
         event.preventDefault();
         console.log('submit changes to mongo');
 
-        axios.put('http://localhost:9000/profileSettings', {
-            main_email: this.state.main_email,
-            bio: this.state.bio
+        axios.put('http://localhost:9000/profileSettings', { 
+            ...this.state
+            /* main_email: this.state.main_email,
+            bio: this.state.bio */
         })
         .then((response) => {
-            console.log(response);
+            console.log(response.data);
+            //this.setState({...response.data});
         }, (error) => {
             console.log(error);
         });

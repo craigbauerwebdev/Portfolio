@@ -6,6 +6,7 @@
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
     "dark-sky": "^1.1.5",
+    "firebase": "^7.14.4",
     "node-sass": "^4.14.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
