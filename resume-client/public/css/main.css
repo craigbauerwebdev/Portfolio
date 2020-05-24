@@ -190,6 +190,14 @@ header {
     max-width: 380px;
     width: 100%;
     height: auto; }
+  header .settings-icon {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  header .welcome {
+    position: absolute;
+    top: 12px;
+    right: 45px; }
 
 footer {
   background-image: url(/assets/space.jpg);
@@ -275,3 +283,17 @@ footer {
 
 #dashboard-page button {
   margin: 0 0 5px 0; }
+
+.login-page {
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; }
+  .login-page label, .login-page input {
+    display: block; }
+  .login-page label {
+    margin: 15px 0; }
+  .login-page input {
+    padding: 10px;
+    font-size: 14px;
+    width: calc(100% - 30px); }

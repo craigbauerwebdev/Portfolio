@@ -7,10 +7,13 @@ import WebExamples from './WebExamples';
 //import SingleExample from './SingleExample';
 import Footer from './Footer';
 import Header from './Header';
+import Login from './Auth/Login.js';
+import PrivateRoute from './Auth/PrivateRoute';
 import About from './About';
 import Resume from './Resume';
 import Contact from './Contact';
 import Dashboard from './dashboard/Dashboard';
+import { AuthProvider } from './Auth/Auth';
 
 class App extends Component {
   constructor(props) {
@@ -60,6 +63,7 @@ class App extends Component {
     if (codeExamples && webExamples && settings) {
       return ( 
         <div className="App">
+          <AuthProvider>
           <Router>
             <Header />
             <p>{this.state.testAPI}</p>
@@ -85,8 +89,18 @@ class App extends Component {
               <Route path="/contact">
                 <Contact settings={settings[0]} />
               </Route>
-              <Route path="/dashboard">
-                <Dashboard settings={settings[0]} />
+              <PrivateRoute exact path="/dashboard" settings={settings[0]}
+                component={Dashboard}
+                /* render={
+                    () => {
+                      <Dashboard />
+                    }
+                } */
+              />
+                {/* <Dashboard settings={settings[0]} /> */}
+              {/* </PrivateRoute> */}
+              <Route exact path="/login">
+                <Login />
               </Route>
               {
                 codeExamples.map(function (single, index) {
@@ -137,12 +151,13 @@ class App extends Component {
               }
               <Route>
                 <h1>404 Page Not Found</h1>
-              </Route>  
+              </Route> 
               {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
             </Switch>
             {/* <SingleCodeRoutes codeExamples={codeExamples} /> */}
             <Footer settings={settings[0]} />
           </Router>
+          </AuthProvider> 
         </div>
       );
     } else {

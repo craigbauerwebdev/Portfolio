@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Switch, Link } from "react-router-dom";
-import Button from './Button';
+//import Button from './Button';
 
 class Icons extends Component {
   constructor(props) {
@@ -17,16 +17,14 @@ class Icons extends Component {
   }
 
   render() {
-    const { showButtons } = this.props;
     return (
       <div>
         <div className="nav-icons center">
-          {/* Make Routes */}
           <Link 
             onMouseEnter={() => { this.handleNavDescription('Home') }} 
             onMouseLeave={() => { this.handleNavDescription('') }} 
             to="/" title="Home">
-            <i className="large material-icons">home</i>
+            <i className="large material-icons">person</i>
           </Link>
           <Link
             onMouseEnter={() => { this.handleNavDescription('Resume') }}
@@ -51,12 +49,6 @@ class Icons extends Component {
             onMouseLeave={() => { this.handleNavDescription('') }}
             to="/contact" title="contact">
             <i className="large material-icons">mail_outline</i>
-          </Link>
-          <Link
-            onMouseEnter={() => { this.handleNavDescription('Dashboard/ Login') }}
-            onMouseLeave={() => { this.handleNavDescription('') }}
-            to="/dashboard" title="Home">
-            <i className="large material-icons">person</i>
           </Link>      
         </div>
           <div id="nav-description">{this.state.navDescription}</div>

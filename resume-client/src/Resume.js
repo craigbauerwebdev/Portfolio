@@ -73,7 +73,7 @@ class Resume extends Component {
         </ul>
         <br />
         
-        <p className="job-description group"><h3 className="freelance-title">Freelance Front-End Web Developer/Designer</h3><i className="right">January 2006 – March 2014</i></p>
+        <div className="job-description group"><h3 className="freelance-title">Freelance Front-End Web Developer/Designer</h3><i className="right">January 2006 – March 2014</i></div>
         <ul>
           <li>Managed multiple freelance web development projects for many clients. Selected projects include:
             <ul>
