@@ -64,8 +64,11 @@ const SettingsSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   main_email: String,
   bio: String,
-  github_url: String,
+  gitHub_url: String,
   linkedin_url: String,
+  bio_intro: String,
+  bio_tagline: String,
+  bio_pic: String
 }),
 
 SettingsModel = mongoose.model('profile_settings', SettingsSchema);
@@ -73,7 +76,7 @@ SettingsModel = mongoose.model('profile_settings', SettingsSchema);
 
 
 app.get('/profileSettings', (req, res) => {
-  console.log('made it to profileSetting Route');
+  //console.log('made it to profileSetting Route');
   SettingsModel.find((err, settings) => {
     if (err) {
       console.log('!=-error-=!');
@@ -87,10 +90,37 @@ app.get('/profileSettings', (req, res) => {
 
 app.put('/profileSettings', (req, res) => {
   console.log('put request made for profile settings');
-  // Update Mongo before returning body
-  res.send(req.body);
-  //res.json({hi: 'there'});
-})
+  console.log(req.body);
+  SettingsModel.findById("5ec40c318f3ebfe68a400e6f", (err, settings) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    if (settings) {
+      settings.main_email = req.body.main_email;
+      settings.bio_intro = req.body.bio_intro;
+      settings.bio_tagline = req.body.bio_tagline;
+      settings.bio_pic = req.body.bio_pic;
+      settings.bio = req.body.bio;
+      settings.linkedin_url = req.body.linkedin_url;
+      settings.gitHub_url = req.body.gitHub_url;
+
+      settings.save().then((err, settings) => {
+        console.log('attempting to save ', 'err: ', err);
+        console.log('attempting to save ', 'settings: ', settings);
+        if (err) {
+          console.log('error:', err);
+          res.status(500).send(err);
+          //res.json(settings);
+        } else {
+          console.log('no error'); 
+          res.json(settings);
+        }
+      }); 
+    } else {
+      res.status(404).send('Settings Failed to Update');
+    }
+  });
+});
 
 
 

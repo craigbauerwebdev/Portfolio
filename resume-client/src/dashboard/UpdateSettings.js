@@ -25,9 +25,9 @@ class UpdateSettings extends Component {
 
     submitUpdate = (event) => {
         event.preventDefault();
-        console.log('submit changes to mongo');
+        //console.log('submit changes to mongo');
 
-        axios.put('http://localhost:9000/profileSettings', { 
+        axios.put('http://localhost:9000/profileSettings', {
             ...this.state
             /* main_email: this.state.main_email,
             bio: this.state.bio */
