@@ -84,4 +84,37 @@ body {
     text-shadow: 1px 1px 1px #525151;
     /* margin: 0 10px 5px 10px; */
     }
+    .success {
+        border: green 3px solid;
+        padding: 15px;
+        margin-bottom: 24px;
+        color: green;
+    }
+    .error {
+        border: green 3px solid;
+        padding: 15px;
+        margin-bottom: 24px;
+        color: green;
+    }
+    .loader {
+        text-align: center;
+        border: 10px solid #000;
+        border-radius: 50%;
+        border-top: 10px solid transparent;
+        width: 24px;
+        height: 24px;
+        margin: 5px 0 0 20px;
+        -webkit-animation: spin 1s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+        opacity: .5;
+    }
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 }

@@ -12,7 +12,10 @@ class Contact extends Component {
     this.state = {
       showForm: true,
       showMessage: false,
-      redirect: false
+      updating: null,
+      showLoader: null,
+      showSuccess: null,
+      showError: null
     }
   }
 
@@ -34,27 +37,33 @@ class Contact extends Component {
     /* this.setState({
       redirect: null
     }); */
-    if(this.state.name && this.state.email && this.state.message) {
-      axios.post(`http://localhost:9000/sendFormAPI`, {
-        name: this.state.name,
-        email: this.state.email,
-        message: this.state.message
+    if(!this.state.updating) {
+      this.setState({
+        updating: true
       })
-      .then(res => {
-        //console.log(res);
-        //const work = res.data;
-        this.setState({ 
-          resMessage: res.data,
-          showForm: false,
-          //redirect: 'success',
-          showMessage: true
+      if(this.state.name && this.state.email && this.state.message) {
+        axios.post(`http://localhost:9000/sendFormAPI`, {
+          name: this.state.name,
+          email: this.state.email,
+          message: this.state.message,
+          updating: true
+        })
+        .then(res => {
+          this.setState({ 
+            resMessage: res.data,
+            showForm: false,
+            showMessage: true,
+            updating: null
+          });
         });
-        //alert(this.state.resMessage);
-      });
-      // clear the form fields 
-    } else {
-      console.log('Missing Data');
-      alert('Form Error. Missing Data');
+        // clear the form fields 
+      } else {
+        console.log('Missing Data');
+        alert('Form Error. Missing Data, please check that all fieldes are filled out and try again');
+        this.setState({
+          updating: null
+        });
+      }
     }
   }
 
@@ -130,7 +139,7 @@ class Contact extends Component {
         }
         {this.state.showMessage &&
         <Fragment>
-          <div className="success-message">{this.state.resMessage}</div>
+          <div className="success-message success">{this.state.resMessage}</div>
           <div onClick={this.handleFormReset}>
             <Button label="Send Another Message" />
           </div>

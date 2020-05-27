@@ -1,43 +1,53 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import { Link } from "react-router-dom";
 
 class UpdateSettings extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            updating: null,
+            showLoader: null,
+            showSuccess: null,
+            showError: null
+        }
     }
 
     componentDidMount() {
         const { settings } = this.props;
         this.setState({
             ...settings
-            /* id: settings._id,
-            main_email: settings.main_email,
-            bio: settings.bio,
-            bio_intro: settings.bio_intro,
-            bio_tagline: settings.bio_tagline,
-            bio_pic: settings.bio_pic,
-            gitHub_url: settings.gitHub_url,
-            linkedin_url: settings.linkedin_url */
-        })
+        });
     }
 
     submitUpdate = (event) => {
         event.preventDefault();
         //console.log('submit changes to mongo');
-
-        axios.put('http://localhost:9000/profileSettings', {
-            ...this.state
-            /* main_email: this.state.main_email,
-            bio: this.state.bio */
-        })
-        .then((response) => {
-            console.log(response.data);
-            //this.setState({...response.data});
-        }, (error) => {
-            console.log(error);
-        });
+        if(!this.state.updating) {
+            this.setState({
+                updating: true,
+                showLoader: true,
+                showSuccess: null,
+                showError: null
+            });
+            axios.put('http://localhost:9000/profileSettings', {
+                ...this.state
+            })
+            .then((response) => {
+                console.log(response.data);
+                //this.setState({...response.data});
+                this.setState({
+                    showLoader: null,
+                    showSuccess: true,
+                    updating: null
+                });
+            }, (error) => {
+                console.log(error);
+                this.setState({
+                    showError: true,
+                    updating: null
+                });
+            });
+        }
     }
 
     handleInputChange = (event) => {
@@ -79,8 +89,24 @@ class UpdateSettings extends Component {
                     <label>Bio</label>
                     <textarea onChange={this.handleInputChange} name="bio" placeholder="Bio" value={bio || ""} required></textarea>
 
-                    <button onClick={this.submitUpdate}>Update Settings</button>
+                    {this.state.showSuccess &&
+                        <div className="success">Updated Successfully</div>
+                    }
+                    {this.state.showError &&
+                        <div classname="error">There was an error plaease try again</div>
+                    }
+
+                    <div className="group">
+                        <button className="left clearfix" onClick={this.submitUpdate}>Update Settings</button>
+                        {this.state.showLoader &&
+                            <div className="loader-wrap left">
+                                <div className="loader"></div>
+                            </div>
+                        }
+                    </div>
+                    
                 </form>
+
             </div>
         );
     }

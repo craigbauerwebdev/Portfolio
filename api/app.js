@@ -43,7 +43,7 @@ const
   DB_USER_PASSWORD = process.env.MONGOPASS,
   //DB_URL = `mongodb+srv://${DB_USER}:${DB_USER_PASSWORD}@songcluster-jz2ss.mongodb.net/test?retryWrites=true&w=majority`;
   DB_URL = `mongodb+srv://${DB_USER}:${DB_USER_PASSWORD}@global-settings-vydsp.mongodb.net/global_settings?retryWrites=true&w=majority`;
-
+           //`mongodb+srv://${DB_USER}:${DB_USER_PASSWORD}@global-settings-vydsp.mongodb.net/test?retryWrites=true&w=majority`;
 mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -71,7 +71,7 @@ const SettingsSchema = mongoose.Schema({
   bio_pic: String
 }),
 
-SettingsModel = mongoose.model('profile_settings', SettingsSchema);
+SettingsModel = mongoose.model('profile_settings', SettingsSchema, 'profile_settings');
 
 
 
@@ -102,20 +102,15 @@ app.put('/profileSettings', (req, res) => {
       settings.bio_pic = req.body.bio_pic;
       settings.bio = req.body.bio;
       settings.linkedin_url = req.body.linkedin_url;
-      settings.gitHub_url = req.body.gitHub_url;
-
-      settings.save().then((err, settings) => {
-        console.log('attempting to save ', 'err: ', err);
-        console.log('attempting to save ', 'settings: ', settings);
-        if (err) {
-          console.log('error:', err);
-          res.status(500).send(err);
-          //res.json(settings);
-        } else {
-          console.log('no error'); 
-          res.json(settings);
-        }
-      }); 
+      settings.gitHub_url2 = req.body.gitHub_url;
+      settings.save()
+      .then(settings => {
+        console.log('settings: ', settings);
+        res.json(settings);
+      }, err => {
+        console.log('err: ', err);
+        res.status(500).send(err);
+      });
     } else {
       res.status(404).send('Settings Failed to Update');
     }
