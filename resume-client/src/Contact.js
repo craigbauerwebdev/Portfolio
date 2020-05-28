@@ -40,8 +40,11 @@ class Contact extends Component {
     if(!this.state.updating) {
       this.setState({
         updating: true
-      })
+      });
       if(this.state.name && this.state.email && this.state.message) {
+        this.setState({
+          showLoader: true
+        })
         axios.post(`http://localhost:9000/sendFormAPI`, {
           name: this.state.name,
           email: this.state.email,
@@ -53,10 +56,10 @@ class Contact extends Component {
             resMessage: res.data,
             showForm: false,
             showMessage: true,
-            updating: null
+            updating: null,
+            showLoader: null
           });
         });
-        // clear the form fields 
       } else {
         console.log('Missing Data');
         alert('Form Error. Missing Data, please check that all fieldes are filled out and try again');
@@ -133,7 +136,14 @@ class Contact extends Component {
                   rows="3"
                   required>
                 </textarea>
-            <button type="submit" onClick={this.submitForm}>Submit Your Message</button>
+            <div className="group">
+              <button className="left" type="submit" onClick={this.submitForm}>Submit Your Message</button>
+              {this.state.showLoader &&
+                <div className="loader-wrap left">
+                  <div className="loader"></div>
+                </div>
+              }
+            </div>
           </form >
         </Fragment>
         }
