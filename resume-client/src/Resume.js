@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from './ui-components/Button';
 import Info from './ResumeComponents/Info';
 import Summary from './ResumeComponents/Summary';
+import Skills from './ResumeComponents/Skills';
 
 class Resume extends Component {
   render() {
@@ -15,39 +16,7 @@ class Resume extends Component {
         <hr />
         <Summary title="Summary" body="Web Developer with over 10 years of experience in website design and implementation, desktop/ mobile web application development, and the completion of hundreds of complex web applications." />
         <br />
-        <h2>Skills</h2>
-        <div className="group">
-          <ul className="col">
-            <li>HTML 5</li>
-            <li>CSS3/ Animation</li>
-            <li>Sass</li>
-            <li>JavaScript ES6</li>
-          </ul>
-          <ul className="col">
-            <li>AJAX/JSON</li>
-            <li>PHP</li>
-            <li>WordPress</li>
-            <li>WP Rest API</li>
-          </ul>
-          <ul className="col">
-            <li>React JS</li>
-            <li>Redux</li>
-            <li>Node JS/ Express</li>
-            <li>jQuery</li>
-          </ul>
-          <ul className="col">
-            <li>GIT/ GIT Hub</li>
-            <li>Bootstrap</li>
-            <li>Foundation</li>
-            <li>Shopify</li>
-          </ul>
-          <ul className="col">
-            <li>PhotoShop</li>
-            <li>Illustrator</li>
-            <li>InDesign</li>
-            <li>Typography</li>
-          </ul>
-        </div>
+        <Skills />
         <br />
         <h2>Professional Experience</h2>
         <h3>Townsquare Media</h3>
@@ -110,7 +79,6 @@ class Resume extends Component {
           <li>Kingsborough Community College</li>
         </ul>
       </div>
-     /*  <Button url="/contact" label="Contact Me" /> */
     );
   }
 }

@@ -29,3 +29,18 @@
   margin: 15px 0; }
   #resume-wrap .button-wrap button {
     margin: 0 10px 5px 10px; }
+
+@media screen and (max-width: 800px) {
+  #resume-wrap ul.col {
+    width: calc(33.3% - 20px); } }
+
+@media screen and (max-width: 550px) {
+  #resume-wrap ul.col {
+    width: calc(50% - 20px); }
+  #resume-wrap .job-description .left, #resume-wrap .job-description .right {
+    float: none;
+    display: block; } }
+
+@media screen and (max-width: 380px) {
+  #resume-wrap ul.col {
+    width: calc(100% - 20px); } }

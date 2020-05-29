@@ -207,6 +207,21 @@ body {
   #resume-wrap .button-wrap button {
     margin: 0 10px 5px 10px; }
 
+@media screen and (max-width: 800px) {
+  #resume-wrap ul.col {
+    width: calc(33.3% - 20px); } }
+
+@media screen and (max-width: 550px) {
+  #resume-wrap ul.col {
+    width: calc(50% - 20px); }
+  #resume-wrap .job-description .left, #resume-wrap .job-description .right {
+    float: none;
+    display: block; } }
+
+@media screen and (max-width: 380px) {
+  #resume-wrap ul.col {
+    width: calc(100% - 20px); } }
+
 header {
   background-image: url(/assets/space.jpg);
   background-size: cover;
@@ -335,3 +350,17 @@ footer {
     padding: 10px;
     font-size: 14px;
     width: calc(100% - 30px); }
+
+.single-code img {
+  width: 100%;
+  max-width: 550px; }
+
+.single-code .project-meta {
+  float: left;
+  width: calc(100% - 610px);
+  padding: 15px 30px; }
+  .single-code .project-meta h1.project-title {
+    font-size: 45px;
+    margin-bottom: 24px; }
+  .single-code .project-meta .project-desc {
+    margin-bottom: 30px; }

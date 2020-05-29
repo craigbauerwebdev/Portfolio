@@ -8,7 +8,7 @@ import { AuthContext } from "./Auth/Auth";
 const Header = (props) => {
   //render() {
     const { currentUser } = useContext(AuthContext);
-    console.log(currentUser);
+    //console.log(currentUser);
     return (
       <div className="header">
         <header className="header">
@@ -16,12 +16,15 @@ const Header = (props) => {
             <img alt="CBD Logo" height="100" src={process.env.PUBLIC_URL + 'assets/CB-logo.png'} />
           </Link>
           <Link to="/login">
-            <i className="large material-icons settings-icon">settings</i>
+            <div className="settings-icon">
+              <i className="large material-icons">settings</i>
+              {currentUser &&
+                <span className="welcome">Signed In</span>
+              }
+            </div>
           </Link>
           <Icons showButtons={true} />
-          {currentUser &&
-            <span className="welcome">Signed In</span>
-          }
+          
         </header>
       </div>
     );

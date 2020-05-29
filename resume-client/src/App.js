@@ -4,7 +4,7 @@ import axios from 'axios';
 import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
 import WebExamples from './WebExamples';
-//import SingleExample from './SingleExample';
+import SingleExample from './SingleExample';
 import Footer from './Footer';
 import Header from './Header';
 import Login from './Auth/Login.js';
@@ -19,9 +19,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      myWork: null,
+      // myWork: null,
       codeExamples: null,
-      testAPI: []
+      //testAPI: []
     };
   }
 
@@ -91,35 +91,17 @@ class App extends Component {
               </Route>
               <PrivateRoute exact path="/dashboard" settings={settings[0]}
                 component={Dashboard}
-                /* render={
-                    () => {
-                      <Dashboard />
-                    }
-                } */
               />
-                {/* <Dashboard settings={settings[0]} /> */}
-              {/* </PrivateRoute> */}
               <Route exact path="/login">
                 <Login />
               </Route>
               {
                 codeExamples.map(function (single, index) {
-                  if (single.status === "publish" || single.status === "draft") {
+                  if (single.status === "publish") {
                     const route = "/" + single.slug;
                     const markup =
                       <Route key={index} path={route}>
-                        {/* <SingleExample single={single} /> */}
-                        <div className="single-code inner">
-                          {/* <Link to="/code">back to projects</Link> */}
-                          <h1 className="project-title">{single.title.rendered}</h1>
-                          <img alt={single.slug} src={single.code_thumb} />
-                          <Button url={single.button_url} label="View On GITHUB" type="popup" />
-                          <div dangerouslySetInnerHTML={{__html: single.excerpt.rendered}}></div>
-                        </div>
-                        <div className="related-projects">                    
-                          <h2 className="more-projects">More Projects</h2>
-                          <CodeExamples data={codeExamples} />
-                        </div>
+                        <SingleExample single={single} type="code" index={index} data={codeExamples} />
                       </Route>
                     return markup;
                   }
@@ -132,17 +114,7 @@ class App extends Component {
                     const route = "/" + single.slug;
                     const markup =
                       <Route key={index} path={route}>
-                        {/* <SingleExample single={single} /> */}
-                        <div className="single-code inner">
-                          <Link to="/websites">back to projects</Link>
-                          <h1 className="project-title">{single.title.rendered}</h1>
-                          <Button url={single.link} label="View Project" type="popup" />
-                          <div dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
-                        </div>
-                        <div className="related-projects">
-                          <h2 className="more-projects">Related Projects</h2>
-                          <WebExamples data={webExamples} />
-                        </div>
+                        <SingleExample single={single} type="web" index={index} data={webExamples} />
                       </Route>
                     return markup;
                   }
@@ -152,9 +124,7 @@ class App extends Component {
               <Route>
                 <h1>404 Page Not Found</h1>
               </Route> 
-              {/*Home Route, Weather Route, Todo Route, Bookmark Route*/}
             </Switch>
-            {/* <SingleCodeRoutes codeExamples={codeExamples} /> */}
             <Footer settings={settings[0]} />
           </Router>
           </AuthProvider> 

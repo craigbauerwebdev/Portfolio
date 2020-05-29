@@ -1,0 +1,13 @@
+.single-code img {
+  width: 100%;
+  max-width: 550px; }
+
+.single-code .project-meta {
+  float: left;
+  width: calc(100% - 610px);
+  padding: 15px 30px; }
+  .single-code .project-meta h1.project-title {
+    font-size: 45px;
+    margin-bottom: 24px; }
+  .single-code .project-meta .project-desc {
+    margin-bottom: 30px; }
