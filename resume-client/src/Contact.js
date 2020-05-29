@@ -33,8 +33,15 @@ class Contact extends Component {
       });
   }
 
+  validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   submitForm = (e) => {
     e.preventDefault();
+    const validEmail = this.validateEmail(this.state.email);
+    console.log("Valid Email: ", validEmail)
     console.log(this.state.name, this.state.email, this.state.message );
     //form validation
     // validate email before check
@@ -45,7 +52,11 @@ class Contact extends Component {
       this.setState({
         updating: true
       });
-      if(this.state.name && this.state.email && this.state.message) {
+      if(this.state.name && validEmail && this.state.message) {
+        console.log('VALID!', validEmail)
+        if (validEmail) {
+          console.log('email is not valid');
+        }
         this.setState({
           showLoader: true
         })
@@ -65,8 +76,27 @@ class Contact extends Component {
           });
         });
       } else {
-        console.log('Missing Data');
-        alert('Form Error. Missing Data, please check that all fieldes are filled out and try again');
+        const 
+          linebreak = '\r\n',
+          doubleLine = '\r\n \r\n';
+        let 
+          errorMessage = "The following issues were found with your submission:";
+          errorMessage += doubleLine;
+        if(!this.state.name) {
+          errorMessage += "- Missing Name";
+          errorMessage += linebreak;
+        }
+        if(!validEmail) {
+          errorMessage += "- Missing or Invalid Email";
+          errorMessage += linebreak;
+        }
+        if(!this.state.message) {
+          errorMessage += "- Missing Message";
+        }
+        errorMessage += doubleLine;
+        errorMessage += "Please check your fields and try again.";
+        errorMessage += linebreak;
+        alert(errorMessage);
         this.setState({
           updating: null
         });
