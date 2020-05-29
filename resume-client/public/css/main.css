@@ -261,6 +261,10 @@ header {
     color: #fff;
     width: 80px; }
 
+@media screen and (max-width: 480px) {
+  header {
+    padding: 42px 15px 6px 15px; } }
+
 footer {
   background-image: url(/assets/space.jpg);
   background-size: cover;
