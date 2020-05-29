@@ -23,4 +23,6 @@ header {
   header .welcome {
     position: absolute;
     top: 12px;
-    right: 45px; }
+    right: 45px;
+    color: #fff;
+    width: 80px; }
