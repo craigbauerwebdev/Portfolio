@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 
 class WebExamples extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
   	const{ data } = this.props;
   	console.log(data);

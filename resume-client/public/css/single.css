@@ -11,3 +11,16 @@
     margin-bottom: 24px; }
   .single-code .project-meta .project-desc {
     margin-bottom: 30px; }
+
+@media screen and (max-width: 900px) {
+  .single-code h1.project-title {
+    margin-bottom: 15px; }
+  .single-code img {
+    width: 100%;
+    max-width: 100%; }
+  .single-code img.left {
+    float: none; }
+  .single-code .project-meta {
+    float: none;
+    width: 100%;
+    padding: 15px 0; } }

@@ -4,6 +4,11 @@ import CodeExamples from './CodeExamples';
 import WebExamples from './WebExamples';
 
 class SingleExample extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     const
       { data, single, type } = this.props,
@@ -13,9 +18,10 @@ class SingleExample extends Component {
     return (
       <Fragment>
         <div className="single-code inner group">
+          <h1 className="project-title mobile">{single.title.rendered}</h1>
           <img className="project-thumb left" alt={single.slug} src={url} />
           <div className="project-meta left">
-            <h1 className="project-title">{single.title.rendered}</h1>
+            <h1 className="project-title desktop">{single.title.rendered}</h1>
             <div className="project-desc" dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
             <Button url={project_url} label={label} type="popup" />
           </div>

@@ -19,6 +19,10 @@ class Contact extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleInputChange = (event) => {
     const 
       target = event.target,

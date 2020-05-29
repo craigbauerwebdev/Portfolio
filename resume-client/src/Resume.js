@@ -5,6 +5,11 @@ import Summary from './ResumeComponents/Summary';
 import Skills from './ResumeComponents/Skills';
 
 class Resume extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     return (
       <div id="resume-wrap" className="inner max-960">
