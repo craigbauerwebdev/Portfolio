@@ -8,7 +8,7 @@ class SingleExample extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   render() {
     const
       { data, single, type } = this.props,
@@ -23,6 +23,10 @@ class SingleExample extends Component {
           <div className="project-meta left">
             <h1 className="project-title desktop">{single.title.rendered}</h1>
             <div className="project-desc" dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
+            <div className="tech-used">
+              <b><p>Technologies Used</p></b>
+              <p>{single.technologies_used}</p>
+            </div>
             <Button url={project_url} label={label} type="popup" />
           </div>
         </div>

@@ -379,6 +379,8 @@ footer {
     margin-bottom: 24px; }
   .single-code .project-meta .project-desc {
     margin-bottom: 30px; }
+  .single-code .project-meta .tech-used {
+    margin-bottom: 30px; }
 
 @media screen and (max-width: 900px) {
   .single-code h1.project-title {
