@@ -150,6 +150,8 @@ body {
     padding: 15px;
     margin-bottom: 24px;
     color: green; }
+  body .red {
+    color: red; }
   body .loader {
     text-align: center;
     border: 10px solid #000;
@@ -381,6 +383,9 @@ footer {
     margin-bottom: 30px; }
   .single-code .project-meta .tech-used {
     margin-bottom: 30px; }
+
+.single-code .tech-used .title {
+  margin-bottom: 10px; }
 
 @media screen and (max-width: 900px) {
   .single-code h1.project-title {

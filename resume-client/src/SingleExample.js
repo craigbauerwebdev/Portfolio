@@ -12,22 +12,27 @@ class SingleExample extends Component {
   render() {
     const
       { data, single, type } = this.props,
-      url = type === "code" ? single.code_thumb : single.thumbnail,
-      project_url = type === "code" ? single.button_url : single.url,
+      src = type === "code" ? single.code_thumb : single.thumbnail,
+      //project_url = type === "code" ? single.button_url : single.url,
       label = type === "code" ? "View On GITHUB" : "View Site";
     return (
       <Fragment>
         <div className="single-code inner group">
           <h1 className="project-title mobile">{single.title.rendered}</h1>
-          <img className="project-thumb left" alt={single.slug} src={url} />
+          <img className="project-thumb left" alt={single.slug} src={src} />
           <div className="project-meta left">
             <h1 className="project-title desktop">{single.title.rendered}</h1>
             <div className="project-desc" dangerouslySetInnerHTML={{ __html: single.excerpt.rendered }}></div>
             <div className="tech-used">
-              <b><p>Technologies Used</p></b>
+              <b><p className="title">Technologies Used</p></b>
               <p>{single.technologies_used}</p>
             </div>
-            <Button url={project_url} label={label} type="popup" />
+            {single.view_btn &&
+              <Button url={single.url} label={label} type="popup" />
+            }
+            {!single.view_btn &&
+              <p className="red">This project is no longer live</p>
+            }
           </div>
         </div>
         <div className="related-projects">
