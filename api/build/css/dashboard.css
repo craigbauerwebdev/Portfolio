@@ -1,0 +1,13 @@
+#dashboard-page h2 {
+  margin: 15px 0; }
+
+#dashboard-page input, #dashboard-page textarea {
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px 0 24px 0;
+  width: calc(100% - 24px);
+  border: 1px #aaa solid; }
+
+#dashboard-page button {
+  margin: 0 0 5px 0; }

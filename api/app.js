@@ -6,6 +6,8 @@ var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
+var morgan = require('morgan');
+var compression = require('compression');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var myworkAPIRouter = require('./routes/myworkAPI');
@@ -14,6 +16,17 @@ var sendFormRouter = require('./routes/sendFormAPI');
 var sendOptionsRouter = require('./routes/getOptionsAPI');
 
 var app = express();
+var dev = app.get('env') !== "productiuon";
+
+if(!dev) {
+  app.disable('x-powered-by'); //makes it harder
+  app.use(compression());
+  app.use(morgan('common'));
+  //app.use(express.static(path.join(__dirname, 'public')));
+  app.get('*', (req, res) => {
+    res.sendFile(parth.resolve(__dirname, 'build', 'index.html'));
+  })
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

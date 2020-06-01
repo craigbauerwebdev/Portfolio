@@ -1,0 +1,401 @@
+.app .inner {
+  padding: 15px; }
+
+.app .center {
+  text-align: center; }
+
+.app .v-space-15 {
+  margin: 15px 0; }
+
+.app .v-space-30 {
+  margin: 30px 0; }
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Safari */ }
+  .loading-screen .loader-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .loading-screen .loader {
+    text-align: center;
+    border: 12px solid #fff;
+    border-radius: 50%;
+    border-top: 12px solid transparent;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    -webkit-animation: spin 1s linear infinite;
+    /* Safari */
+    animation: spin 1s linear infinite;
+    opacity: .5; }
+  .loading-screen p {
+    color: #fff;
+    margin-top: 10px;
+    opacity: .5; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+#about-wrap {
+  text-align: center; }
+  #about-wrap .bio-pic {
+    background-image: url(/assets/me.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px auto; }
+  #about-wrap .mern-stack {
+    max-width: 700px; }
+  #about-wrap .bio {
+    text-align: left;
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 800px; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Safari */ }
+  body code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+  body .group:after {
+    content: "";
+    display: table;
+    clear: both; }
+  body .material-icons {
+    padding: 10px;
+    color: #fff; }
+  body .nav-icons {
+    margin-top: 15px; }
+  body .inner {
+    padding: 15px; }
+  body .related-projects h2.more-projects {
+    padding: 15px 15px 0 15px; }
+  body #examples.inner {
+    padding: 0 5px 10px 5px; }
+  body .page-title {
+    padding: 15px 15px 0 15px; }
+    body .page-title h1 {
+      padding: 15px 0 0 0; }
+  body #nav-description {
+    height: 18px; }
+  body .center {
+    text-align: center; }
+  body .left {
+    float: left; }
+  body .right {
+    float: right; }
+  body .max-960 {
+    max-width: 960px;
+    margin: 0 auto; }
+  body .v-space-30 {
+    margin: 30px 0; }
+  body .contact-pic {
+    float: left;
+    background-image: url(/assets/me.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px; }
+  body .social-icons {
+    margin-top: 15px; }
+  body button {
+    color: #fff;
+    background: #146db4;
+    border-radius: 5px;
+    padding: 15px 17px 15px 15px;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #525151;
+    /* margin: 0 10px 5px 10px; */ }
+  body .success {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green; }
+  body .error {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green; }
+  body .red {
+    color: red; }
+  body .loader {
+    text-align: center;
+    border: 10px solid #000;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    width: 24px;
+    height: 24px;
+    margin: 5px 0 0 20px;
+    -webkit-animation: spin 1s linear infinite;
+    /* Safari */
+    animation: spin 1s linear infinite;
+    opacity: .5; }
+  body .desktop {
+    display: block; }
+  body .mobile {
+    display: none; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@media screen and (max-width: 1100px) {
+  body .desktop {
+    display: none; }
+  body .mobile {
+    display: block; } }
+
+#resume-wrap h2 {
+  margin: 15px 0;
+  text-decoration: underline; }
+
+#resume-wrap h3 {
+  margin-bottom: 2px; }
+
+#resume-wrap #info-wrap {
+  text-align: center;
+  padding-bottom: 24px; }
+
+#resume-wrap .freelance-title {
+  float: left; }
+
+#resume-wrap .job-description {
+  margin-bottom: 8px; }
+
+#resume-wrap ul {
+  margin-left: 20px; }
+  #resume-wrap ul li {
+    margin-bottom: 5px; }
+
+#resume-wrap ul.col {
+  width: calc(20% - 20px);
+  float: left; }
+
+#resume-wrap .button-wrap {
+  text-align: center;
+  margin: 15px 0; }
+  #resume-wrap .button-wrap button {
+    margin: 0 10px 5px 10px; }
+
+@media screen and (max-width: 800px) {
+  #resume-wrap ul.col {
+    width: calc(33.3% - 20px); } }
+
+@media screen and (max-width: 550px) {
+  #resume-wrap ul.col {
+    width: calc(50% - 20px); }
+  #resume-wrap .job-description .left, #resume-wrap .job-description .right {
+    float: none;
+    display: block; } }
+
+@media screen and (max-width: 380px) {
+  #resume-wrap ul.col {
+    width: calc(100% - 20px); } }
+
+header {
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 25px 15px 6px 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 99;
+  text-align: center; }
+  header .nav-icons {
+    margin-top: 15px; }
+  header img {
+    max-width: 380px;
+    width: 100%;
+    height: auto; }
+  header .settings-icon {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  header .welcome {
+    position: absolute;
+    top: 12px;
+    right: 45px;
+    color: #fff;
+    width: 80px; }
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 42px 15px 6px 15px; } }
+
+footer {
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 15px;
+  text-align: center; }
+
+.project {
+  position: relative;
+  padding-top: 16%;
+  width: 25%;
+  float: left; }
+  .project .inner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px #000 solid; }
+    .project .inner .project-title {
+      position: absolute;
+      top: 70%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px 0;
+      font-size: 14px; }
+
+@media screen and (max-width: 1100px) {
+  .project {
+    padding-top: 21%;
+    width: 33.3333%; } }
+
+@media screen and (max-width: 800px) {
+  .project {
+    padding-top: 30%;
+    width: 50%; } }
+
+@media screen and (max-width: 550px) {
+  .project {
+    padding-top: 60%;
+    width: 100%; }
+    .project .inner {
+      position: absolute;
+      right: 0;
+      left: 0; } }
+
+#contact-form fieldset {
+  border: none; }
+
+#contact-form input, #contact-form textarea {
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  margin: 24px 0;
+  width: calc(100% - 24px);
+  max-width: 960px;
+  border: 1px #aaa solid; }
+
+#contact-form button {
+  margin: 0 0 5px 0; }
+
+#contact-wrap h2 {
+  margin: 15px 0 5px 0; }
+
+#contact-wrap p {
+  margin: 5px 0; }
+
+#contact-wrap .profile-card {
+  margin-bottom: 24px; }
+
+#dashboard-page h2 {
+  margin: 15px 0; }
+
+#dashboard-page input, #dashboard-page textarea {
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px 0 24px 0;
+  width: calc(100% - 24px);
+  border: 1px #aaa solid; }
+
+#dashboard-page button {
+  margin: 0 0 5px 0; }
+
+.login-page {
+  padding: 15px;
+  max-width: 400px;
+  margin: 0 auto; }
+  .login-page label, .login-page input {
+    display: block; }
+  .login-page label {
+    margin: 15px 0; }
+  .login-page input {
+    padding: 10px;
+    font-size: 14px;
+    width: calc(100% - 30px); }
+
+.single-code img {
+  width: 100%;
+  max-width: 550px; }
+
+.single-code .project-meta {
+  float: left;
+  width: calc(100% - 610px);
+  padding: 15px 30px; }
+  .single-code .project-meta h1.project-title {
+    font-size: 45px;
+    margin-bottom: 24px; }
+  .single-code .project-meta .project-desc {
+    margin-bottom: 30px; }
+  .single-code .project-meta .tech-used {
+    margin-bottom: 30px; }
+
+.single-code .tech-used .title {
+  margin-bottom: 10px; }
+
+@media screen and (max-width: 900px) {
+  .single-code h1.project-title {
+    margin-bottom: 15px; }
+  .single-code img {
+    width: 100%;
+    max-width: 100%; }
+  .single-code img.left {
+    float: none; }
+  .single-code .project-meta {
+    float: none;
+    width: 100%;
+    padding: 15px 0; } }

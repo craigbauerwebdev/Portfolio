@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Safari */ }
+  body code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+  body .group:after {
+    content: "";
+    display: table;
+    clear: both; }
+  body .material-icons {
+    padding: 10px;
+    color: #fff; }
+  body .nav-icons {
+    margin-top: 15px; }
+  body .inner {
+    padding: 15px; }
+  body .related-projects h2.more-projects {
+    padding: 15px 15px 0 15px; }
+  body #examples.inner {
+    padding: 0 5px 10px 5px; }
+  body .page-title {
+    padding: 15px 15px 0 15px; }
+    body .page-title h1 {
+      padding: 15px 0 0 0; }
+  body #nav-description {
+    height: 18px; }
+  body .center {
+    text-align: center; }
+  body .left {
+    float: left; }
+  body .right {
+    float: right; }
+  body .max-960 {
+    max-width: 960px;
+    margin: 0 auto; }
+  body .v-space-30 {
+    margin: 30px 0; }
+  body .contact-pic {
+    float: left;
+    background-image: url(/assets/me.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px; }
+  body .social-icons {
+    margin-top: 15px; }
+  body button {
+    color: #fff;
+    background: #146db4;
+    border-radius: 5px;
+    padding: 15px 17px 15px 15px;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #525151;
+    /* margin: 0 10px 5px 10px; */ }
+  body .success {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green; }
+  body .error {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green; }
+  body .red {
+    color: red; }
+  body .loader {
+    text-align: center;
+    border: 10px solid #000;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    width: 24px;
+    height: 24px;
+    margin: 5px 0 0 20px;
+    -webkit-animation: spin 1s linear infinite;
+    /* Safari */
+    animation: spin 1s linear infinite;
+    opacity: .5; }
+  body .desktop {
+    display: block; }
+  body .mobile {
+    display: none; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@media screen and (max-width: 1100px) {
+  body .desktop {
+    display: none; }
+  body .mobile {
+    display: block; } }

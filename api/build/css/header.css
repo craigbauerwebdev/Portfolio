@@ -1,0 +1,32 @@
+header {
+  background-image: url(/assets/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 25px 15px 6px 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 99;
+  text-align: center; }
+  header .nav-icons {
+    margin-top: 15px; }
+  header img {
+    max-width: 380px;
+    width: 100%;
+    height: auto; }
+  header .settings-icon {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  header .welcome {
+    position: absolute;
+    top: 12px;
+    right: 45px;
+    color: #fff;
+    width: 80px; }
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 42px 15px 6px 15px; } }
