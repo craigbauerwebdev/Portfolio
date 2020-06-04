@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   callSiteOptions() {
-    axios.get(`http://localhost:9000/profileSettings`)
+    axios.get(`${process.env.PUBLIC_URL}/profileSettings`)
       .then(res => {
         //console.log(res);
         const options = res.data;
@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   callMyWorkAPI() {
-    axios.get(`http://localhost:9000/myworkAPI`)
+    axios.get(`https://c-b-potfolio.herokuapp.com/myworkAPI`)
       .then(res => {
         //console.log(res);
         const work = res.data;
@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   callCodeAPI() {
-    axios.get(`http://localhost:9000/codeExamplesAPI`)
+    axios.get(`${process.env.PUBLIC_URL}/codeExamplesAPI`)
       .then(res => {
         //console.log(res);
         const code = res.data;

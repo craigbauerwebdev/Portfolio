@@ -26,7 +26,7 @@
     "extends": "react-app"
   },
   "proxy": "http://localhost:9000",
-  "homepage": "http://localhost:9000",
+  "homepage": "https://c-b-potfolio.herokuapp.com",
   "browserslist": [
     ">0.2%",
     "not dead",
