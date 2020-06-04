@@ -60,7 +60,7 @@ class Contact extends Component {
         this.setState({
           showLoader: true
         })
-        axios.post(`http://localhost:9000/sendFormAPI`, {
+        axios.post(`${process.env.PUBLIC_URL}/sendFormAPI`, {
           name: this.state.name,
           email: this.state.email,
           message: this.state.message,

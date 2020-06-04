@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   callMyWorkAPI() {
-    axios.get(`https://c-b-potfolio.herokuapp.com/myworkAPI`)
+    axios.get(`${process.env.PUBLIC_URL}/myworkAPI`)
       .then(res => {
         //console.log(res);
         const work = res.data;

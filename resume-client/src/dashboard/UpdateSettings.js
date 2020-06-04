@@ -29,7 +29,7 @@ class UpdateSettings extends Component {
                 showSuccess: null,
                 showError: null
             });
-            axios.put('http://localhost:9000/profileSettings', {
+            axios.put(`${process.env.PUBLIC_URL}/profileSettings`, {
                 ...this.state
             })
             .then((response) => {
