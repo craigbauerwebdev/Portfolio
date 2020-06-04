@@ -1,0 +1,15 @@
+{
+    "name": "Craig Bauer | Portfolio",
+    "description": "My web portfolio built as a MEAN stacjk app",
+    "repository": "https://github.com/craigbauerwebdev/Portfolio",
+    "logo": "",
+    "keywoeds": ["node", "react", "portfolio"],
+    "image": "heroku/nodejs"
+},
+{
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-node.js"
+        }
+    ]
+}
