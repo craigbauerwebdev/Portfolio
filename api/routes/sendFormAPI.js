@@ -22,7 +22,8 @@ router.post('/', function (req, res, next) {
     // Attempt to send the email
     smtpTrans.sendMail(mailOpts, (error, response) => {
         if (error) {
-            res.send('Form failed to send. Please try again.', error) // Send failure
+            //res.send('Form failed to send. Please try again.', error) // Send failure
+            res.status(500).send('Form failed to send. Please try again.')
         }
         else {
             res.send('Thank You. Your form has been sent. I will get back to you.') // Send success
