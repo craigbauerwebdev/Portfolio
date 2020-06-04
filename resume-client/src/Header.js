@@ -12,8 +12,8 @@ const Header = (props) => {
     return (
       <div className="header">
         <header className="header">
-          <Link to="/">
-            <img alt="CBD Logo" height="100" src={process.env.PUBLIC_URL + 'assets/CB-logo.png'} />
+          <Link to={`${process.env.PUBLIC_URL}/`}>
+            <img alt="CBD Logo" height="100" src={`${process.env.PUBLIC_URL}/assets/CB-logo.png`} />
           </Link>
           <Link to="/login">
             <div className="settings-icon">

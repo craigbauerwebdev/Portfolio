@@ -6,8 +6,8 @@ var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
-var morgan = require('morgan');
-var compression = require('compression');
+//var morgan = require('morgan');
+//var compression = require('compression');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var myworkAPIRouter = require('./routes/myworkAPI');
@@ -16,16 +16,18 @@ var sendFormRouter = require('./routes/sendFormAPI');
 var sendOptionsRouter = require('./routes/getOptionsAPI');
 
 var app = express();
-var dev = app.get('env') !== "productiuon";
+var dev = app.get('env') !== "production";
+console.log("global: ", dev);
 
 if(!dev) {
+  console.log("!dev", dev);
   app.disable('x-powered-by'); //makes it harder
-  app.use(compression());
-  app.use(morgan('common'));
-  //app.use(express.static(path.join(__dirname, 'public')));
-  app.get('*', (req, res) => {
-    res.sendFile(parth.resolve(__dirname, 'build', 'index.html'));
-  })
+  //app.use(compression());
+  //app.use(morgan('common'));
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.get('/api', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 }
 
 // view engine setup
@@ -38,6 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.json());
 
 app.use('/', indexRouter);

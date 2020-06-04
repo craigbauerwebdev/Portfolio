@@ -45,7 +45,7 @@ body {
     margin: 30px 0; }
   body .contact-pic {
     float: left;
-    background-image: url(/assets/me.jpg);
+    background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/me.jpg);
     background-size: cover;
     background-position: top;
     width: 120px;

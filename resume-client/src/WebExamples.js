@@ -18,7 +18,7 @@ class WebExamples extends Component {
             	const 
                 slug = "/" + project.slug,
             	  markup =
-            	<Link key={index} to={slug}>
+                <Link key={index} to={`${process.env.PUBLIC_URL}${slug}`}>
               	<div className="project">
                     <div className="inner" style={{
                       backgroundImage: "url(" + project.thumbnail + ")", backgroundSize: "cover", backgroundPosition: "top"

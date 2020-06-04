@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from 'axios';
-import Button from './ui-components/Button';
+//import Button from './ui-components/Button';
 import CodeExamples from './CodeExamples';
 import WebExamples from './WebExamples';
 import SingleExample from './SingleExample';
@@ -19,9 +19,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // myWork: null,
       codeExamples: null,
-      //testAPI: []
+      webExamples: null,
+      settings: null
     };
   }
 
@@ -68,25 +68,25 @@ class App extends Component {
             <Header />
             <p>{this.state.testAPI}</p>
             <Switch>
-              <Route exact path="/">
+                <Route exact path={`${process.env.PUBLIC_URL}/`}>
                 <About settings={settings[0]} />
               </Route>
-              <Route path="/resume">
+              <Route path={`${process.env.PUBLIC_URL}/resume`}>
                 <Resume />
               </Route>
-              <Route path="/websites">
+              <Route path={`${process.env.PUBLIC_URL}/websites`}>
                 <div className="page-title">
                   <h1>Web Sites</h1>
                 </div>
                 <WebExamples data={this.state.webExamples} />
               </Route>
-              <Route path="/code">
+              <Route path={`${process.env.PUBLIC_URL}/code`}>
                 <div className="page-title">
                   <h1>Code Examples</h1>
                 </div>
                 <CodeExamples data={this.state.codeExamples} />
               </Route>
-              <Route path="/contact">
+              <Route path={`${process.env.PUBLIC_URL}/contact`}>
                 <Contact settings={settings[0]} />
               </Route>
               <PrivateRoute exact path="/dashboard" settings={settings[0]}
@@ -100,7 +100,7 @@ class App extends Component {
                   if (single.status === "publish") {
                     const route = "/" + single.slug;
                     const markup =
-                      <Route key={index} path={route}>
+                      <Route key={index} path={`${process.env.PUBLIC_URL}${route}`}>
                         <SingleExample single={single} type="code" index={index} data={codeExamples} />
                       </Route>
                     return markup;
@@ -113,7 +113,7 @@ class App extends Component {
                   if (single.status === "publish") {
                     const route = "/" + single.slug;
                     const markup =
-                      <Route key={index} path={route}>
+                      <Route key={index} path={`${process.env.PUBLIC_URL}${route}`}>
                         <SingleExample single={single} type="web" index={index} data={webExamples} />
                       </Route>
                     return markup;

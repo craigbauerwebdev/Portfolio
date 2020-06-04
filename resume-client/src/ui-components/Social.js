@@ -12,20 +12,20 @@ class Social extends Component {
         markup = 
             <Fragment>
             <a href={github} rel="noopener noreferrer" target="_blank">
-                    <img style={styles} alt="github-icon" src="/assets/github-dark.png" />
+                <img style={styles} alt="github-icon" src={`${process.env.PUBLIC_URL}/assets/github-dark.png`} />
                 </a>
             <a href={linkedin} rel="noopener noreferrer" target="_blank">
-                    <img style={styles} alt="linkedin-icon" src="/assets/linkedin-dark.png" />
+                <img style={styles} alt="linkedin-icon" src={`${process.env.PUBLIC_URL}/assets/linkedin-dark.png`} />
                 </a>
             </Fragment>
     } else {
         markup =
             <Fragment>
             <a href={github} rel="noopener noreferrer" target="_blank">
-                    <img style={styles} alt="github-icon" src="/assets/github.png" />
+                <img style={styles} alt="github-icon" src={`${process.env.PUBLIC_URL}/assets/github.png`} />
                 </a>
             <a href={linkedin} rel="noopener noreferrer" target="_blank">
-                    <img style={styles} alt="linkedin-icon" src="/assets/linkedin.png" />
+                <img style={styles} alt="linkedin-icon" src={`${process.env.PUBLIC_URL}/assets/linkedin.png`} />
                 </a>
             </Fragment>
     }

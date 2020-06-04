@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 class Summary extends Component {
 
   render() {
-      const { title, body } = this.props;
+    //const { title, body } = this.props;
     return (
         <Fragment>
             <h2>Skills</h2>
