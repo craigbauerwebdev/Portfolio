@@ -16,3 +16,5 @@
     margin: 0 auto;
     padding: 15px;
     max-width: 800px; }
+    #about-wrap .bio p {
+      line-height: 30px; }

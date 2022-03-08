@@ -1,23 +1,26 @@
 #about-wrap {
-	text-align: center;
-    .bio-pic {
-        background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/me.jpg);
-        background-size: cover;
-        background-position: top;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 0 auto 15px auto;
-    }
-    .mern-stack {
-        max-width: 700px;
-    }
-    .bio {
-        text-align: left;
-        margin: 0 auto;
-        padding: 15px;
-        max-width: 800px;
-    }
-}
+  text-align: center;
+  .bio-pic {
+    background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/me.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+  }
+  .mern-stack {
+    max-width: 700px;
+  }
+  .bio {
+    text-align: left;
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 800px;
 
+    p {
+      line-height: 30px;
+    }
+  }
+}
