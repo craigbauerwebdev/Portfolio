@@ -3,7 +3,7 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #fff;
+  color: #ffffff;
   padding: 25px 15px 6px 15px;
   position: sticky;
   position: -webkit-sticky;
@@ -24,7 +24,7 @@ header {
     position: absolute;
     top: 12px;
     right: 45px;
-    color: #fff;
+    color: #ffffff;
     width: 80px; }
 
 @media screen and (max-width: 480px) {

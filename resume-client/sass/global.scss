@@ -1,140 +1,151 @@
+@import "variables";
+
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-    }
-    .group:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    .material-icons {
-        padding: 10px;
-        color: #fff;
-    }
-    .nav-icons {
-        margin-top: 15px;
-    }
-    .inner {
-        padding: 15px;
-    }
-    .related-projects {
-        h2.more-projects {
-            padding: 15px 15px 0 15px;
-        }
-    }
-    #examples.inner {
-        padding: 0 5px 10px 5px;
-    }
-    .page-title {
-        padding: 15px 15px 0 15px;
-        h1 {
-            padding: 15px 0 0 0;
-        }
-    }
-    #nav-description {
-        height: 18px;
-    }
-    .center {
-        text-align: center;
-    }
-    .left {
-        float: left;
-    }
-    .right {
-        float: right;
-    }
-    .max-960 {
-        max-width: 960px;
-        margin: 0 auto;
-    }
-    .v-space-30 {
-        margin: 30px 0;
-    }
-    .contact-pic {
-        float: left;
-        background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/me.jpg);
-        background-size: cover;
-        background-position: top;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 30px;
-    }
-    .social-icons {
-        margin-top: 15px;
-    }
-    button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .material-icons {
+    padding: 10px;
     color: #fff;
+  }
+  .nav-icons {
+    margin-top: 15px;
+  }
+  .inner {
+    padding: 15px;
+  }
+  .related-projects {
+    h2.more-projects {
+      padding: 15px 15px 0 15px;
+    }
+  }
+  #examples.inner {
+    padding: 0 5px 10px 5px;
+  }
+  .page-title {
+    padding: 15px 15px 0 15px;
+    h1 {
+      padding: 15px 0 0 0;
+    }
+  }
+  #nav-description {
+    height: 18px;
+  }
+  .center {
+    text-align: center;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .max-960 {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .v-space-30 {
+    margin: 30px 0;
+  }
+  .contact-pic {
+    float: left;
+    background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/me.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  .social-icons {
+    margin-top: 15px;
+  }
+  button {
+    color: $white;
     background: #146db4;
     border-radius: 5px;
     padding: 15px 17px 15px 15px;
     font-size: 14px;
     text-shadow: 1px 1px 1px #525151;
     /* margin: 0 10px 5px 10px; */
+  }
+  .success {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green;
+  }
+  .error {
+    border: green 3px solid;
+    padding: 15px;
+    margin-bottom: 24px;
+    color: green;
+  }
+  .red {
+    color: red;
+  }
+  .loader {
+    text-align: center;
+    border: 10px solid #000;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    width: 24px;
+    height: 24px;
+    margin: 5px 0 0 20px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    opacity: 0.5;
+  }
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
     }
-    .success {
-        border: green 3px solid;
-        padding: 15px;
-        margin-bottom: 24px;
-        color: green;
+    100% {
+      -webkit-transform: rotate(360deg);
     }
-    .error {
-        border: green 3px solid;
-        padding: 15px;
-        margin-bottom: 24px;
-        color: green;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-    .red {
-        color: red;
+    100% {
+      transform: rotate(360deg);
     }
-    .loader {
-        text-align: center;
-        border: 10px solid #000;
-        border-radius: 50%;
-        border-top: 10px solid transparent;
-        width: 24px;
-        height: 24px;
-        margin: 5px 0 0 20px;
-        -webkit-animation: spin 1s linear infinite; /* Safari */
-        animation: spin 1s linear infinite;
-        opacity: .5;
-    }
-    .desktop {
-        display: block;
-    }
-    .mobile {
-        display: none
-    }
-    /* Safari */
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+  }
 }
 
 @media screen and (max-width: 1100px) {
-    body {
-       .desktop {
-            display: none;
-        }
-        .mobile {
-            display: block;
-        } 
+  body {
+    .desktop {
+      display: none;
     }
+    .mobile {
+      display: block;
+    }
+  }
 }

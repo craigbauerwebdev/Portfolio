@@ -133,7 +133,7 @@ body {
   body .social-icons {
     margin-top: 15px; }
   body button {
-    color: #fff;
+    color: #ffffff;
     background: #146db4;
     border-radius: 5px;
     padding: 15px 17px 15px 15px;
@@ -163,7 +163,7 @@ body {
     -webkit-animation: spin 1s linear infinite;
     /* Safari */
     animation: spin 1s linear infinite;
-    opacity: .5; }
+    opacity: 0.5; }
   body .desktop {
     display: block; }
   body .mobile {
@@ -239,7 +239,7 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #fff;
+  color: #ffffff;
   padding: 25px 15px 6px 15px;
   position: sticky;
   position: -webkit-sticky;
@@ -260,7 +260,7 @@ header {
     position: absolute;
     top: 12px;
     right: 45px;
-    color: #fff;
+    color: #ffffff;
     width: 80px; }
 
 @media screen and (max-width: 480px) {
