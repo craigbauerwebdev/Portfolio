@@ -1,14 +1,14 @@
-.app .inner {
-  padding: 15px; }
-
-.app .center {
-  text-align: center; }
-
-.app .v-space-15 {
-  margin: 15px 0; }
-
-.app .v-space-30 {
-  margin: 30px 0; }
+.App {
+  width: 100%;
+  margin-left: 170px; }
+  .App .inner {
+    padding: 15px; }
+  .App .center {
+    text-align: center; }
+  .App .v-space-15 {
+    margin: 15px 0; }
+  .App .v-space-30 {
+    margin: 30px 0; }
 
 .loading-screen {
   position: fixed;
@@ -16,7 +16,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/space.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -38,11 +37,11 @@
     -webkit-animation: spin 1s linear infinite;
     /* Safari */
     animation: spin 1s linear infinite;
-    opacity: .5; }
+    opacity: 0.5; }
   .loading-screen p {
     color: #fff;
     margin-top: 10px;
-    opacity: .5; }
+    opacity: 0.5; }
 
 @-webkit-keyframes spin {
   0% {

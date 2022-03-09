@@ -1,60 +1,69 @@
-.app {
-    .inner {
+.App {
+  width: 100%;
+  margin-left: 170px;
+  .inner {
     padding: 15px;
-    }
-    .center {
-        text-align: center;
-    }
-    .v-space-15 {
-        margin: 15px 0;
-    }
-    .v-space-30 {
-        margin: 30px 0;
-    }
+  }
+  .center {
+    text-align: center;
+  }
+  .v-space-15 {
+    margin: 15px 0;
+  }
+  .v-space-30 {
+    margin: 30px 0;
+  }
 }
 
 .loading-screen {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/space.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    .loader-wrap {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  .loader-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .loader {
+    text-align: center;
+    border: 12px solid #fff;
+    border-radius: 50%;
+    border-top: 12px solid transparent;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    opacity: 0.5;
+  }
+  p {
+    color: #fff;
+    margin-top: 10px;
+    opacity: 0.5;
+  }
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
     }
-    .loader {
-        text-align: center;
-        border: 12px solid #fff;
-        border-radius: 50%;
-        border-top: 12px solid transparent;
-        width: 50px;
-        height: 50px;
-        margin: 0 auto;
-        -webkit-animation: spin 1s linear infinite; /* Safari */
-        animation: spin 1s linear infinite;
-        opacity: .5;
+    100% {
+      -webkit-transform: rotate(360deg);
     }
-    p {
-        color: #fff;
-        margin-top: 10px;
-        opacity: .5;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-    /* Safari */
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
+    100% {
+      transform: rotate(360deg);
     }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+  }
 }
-    

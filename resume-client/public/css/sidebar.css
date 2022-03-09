@@ -1,0 +1,10 @@
+.main-side-bar {
+  width: 170px;
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100vh;
+  position: fixed;
+  border-right: 1px #666666 solid; }
+  .main-side-bar img {
+    width: 100%; }
