@@ -1,3 +1,5 @@
+@import "variables";
+
 #about-wrap {
   text-align: center;
   .bio-pic {
@@ -9,6 +11,10 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 15px auto;
+  }
+  h1 {
+    font-family: $font-title;
+    font-size: 60px;
   }
   .mern-stack {
     max-width: 700px;

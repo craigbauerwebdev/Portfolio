@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 .App {
   width: 100%;
   margin-left: 170px; }
@@ -9,6 +10,10 @@
     margin: 15px 0; }
   .App .v-space-30 {
     margin: 30px 0; }
+
+@media screen and (max-width: 980px) {
+  .App {
+    margin-left: 0; } }
 
 .loading-screen {
   position: fixed;
@@ -66,6 +71,9 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 15px auto; }
+  #about-wrap h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 60px; }
   #about-wrap .mern-stack {
     max-width: 700px; }
   #about-wrap .bio {
@@ -81,6 +89,7 @@
   margin: 0; }
 
 body {
+  color: #ffffff;
   background: #1d1d1d;
   margin: 0;
   padding: 0;
@@ -239,6 +248,7 @@ body {
     width: calc(100% - 20px); } }
 
 header {
+  display: none;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -265,6 +275,10 @@ header {
     right: 45px;
     color: #ffffff;
     width: 80px; }
+
+@media screen and (max-width: 980px) {
+  header {
+    display: block; } }
 
 @media screen and (max-width: 480px) {
   header {
@@ -407,12 +421,16 @@ footer {
     padding: 15px 0; } }
 
 .main-side-bar {
+  background: #181818;
   width: 170px;
   flex-basis: 200px;
   flex-grow: 0;
   flex-shrink: 0;
   height: 100vh;
-  position: fixed;
-  border-right: 1px #666666 solid; }
+  position: fixed; }
   .main-side-bar img {
     width: 100%; }
+
+@media screen and (max-width: 980px) {
+  .main-side-bar {
+    display: none; } }

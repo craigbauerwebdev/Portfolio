@@ -1,6 +1,7 @@
 @import "variables";
 
 header {
+  display: none; //show in mobile
   //background-image: url(http://craigbauer.nyc/wp-content/uploads/2020/06/space.jpg);
   background-size: cover;
   background-position: center;
@@ -31,6 +32,11 @@ header {
     right: 45px;
     color: $white;
     width: 80px;
+  }
+}
+@media screen and (max-width: 980px) {
+  header {
+    display: block;
   }
 }
 @media screen and (max-width: 480px) {

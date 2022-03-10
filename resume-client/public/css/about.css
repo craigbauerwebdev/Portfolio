@@ -9,6 +9,9 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 15px auto; }
+  #about-wrap h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 60px; }
   #about-wrap .mern-stack {
     max-width: 700px; }
   #about-wrap .bio {

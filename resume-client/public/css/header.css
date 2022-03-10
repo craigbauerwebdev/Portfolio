@@ -1,4 +1,5 @@
 header {
+  display: none;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -25,6 +26,10 @@ header {
     right: 45px;
     color: #ffffff;
     width: 80px; }
+
+@media screen and (max-width: 980px) {
+  header {
+    display: block; } }
 
 @media screen and (max-width: 480px) {
   header {

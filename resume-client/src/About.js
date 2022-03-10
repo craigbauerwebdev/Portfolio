@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 //import ReactContactForm from 'react-mail-form';
 
 const About = (siteSettings) => {
@@ -7,9 +7,10 @@ const About = (siteSettings) => {
   }, []);
 
   const { settings } = siteSettings;
+
   return (
     <div id="about-wrap" className="inner">
-      <div className="bio-pic"></div>
+      {/* <div className="bio-pic"></div> */}
       <h1>{settings.bio_intro}</h1>
       <h2>I'm a Frontend Web Developer</h2>
       <img
@@ -21,6 +22,7 @@ const About = (siteSettings) => {
       <div className="bio">
         <p>{settings.bio}</p>
       </div>
+
       {/*<ReactContactForm to="craigbauer23@gmail.com" />*/}
       {/*  <Weather weather={this.props.weather} /> */}
     </div>
