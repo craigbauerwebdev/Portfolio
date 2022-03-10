@@ -1,6 +1,6 @@
-/* import React from "react";
+import React from "react";
 
-const Tag = (content, indent) => {
+const Tag = ({ content, indent }) => {
   return (
     <div style={{ marginLeft: indent }} className="htmltag">
       {content}
@@ -9,4 +9,7 @@ const Tag = (content, indent) => {
 };
 
 export default Tag;
- */
+
+/* <div style={{ marginLeft: `${indent}%` }} className="htmltag">
+      {content}
+    </div> */

@@ -1,0 +1,16 @@
+.htmltag {
+  font-family: "Courgette", cursive;
+  color: #777777;
+  margin: 15px 0;
+  font-size: 14px; }
+
+/* @media screen and (max-width: 980px) {
+  header {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    padding: 42px 15px 6px 15px;
+  }
+} */

@@ -11,7 +11,7 @@ const Header = (props) => {
   //console.log(currentUser);
   return (
     <div className="header">
-      <header className="header">
+      <header>
         <Link to={`${process.env.PUBLIC_URL}/`}>
           <img
             alt="CB Logo"
@@ -27,6 +27,7 @@ const Header = (props) => {
         </Link>
         <Icons showButtons={true} />
       </header>
+      <hr />
     </div>
   );
   //}

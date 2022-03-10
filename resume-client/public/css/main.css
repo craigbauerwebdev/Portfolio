@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 .App {
   width: 100%;
   margin-left: 170px; }
@@ -61,7 +62,7 @@
     transform: rotate(360deg); } }
 
 #about-wrap {
-  text-align: center; }
+  margin-top: 30px; }
   #about-wrap .bio-pic {
     background-image: url(assets/me.jpg);
     background-size: cover;
@@ -73,14 +74,15 @@
     margin: 0 auto 15px auto; }
   #about-wrap h1 {
     font-family: "Archivo Black", sans-serif;
-    font-size: 60px; }
+    color: #1c6fb5;
+    font-size: 60px;
+    margin-left: 6%; }
+  #about-wrap p {
+    margin-left: 6%; }
   #about-wrap .mern-stack {
     max-width: 700px; }
   #about-wrap .bio {
-    text-align: left;
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 800px; }
+    text-align: left; }
     #about-wrap .bio p {
       line-height: 30px; }
 
@@ -247,37 +249,38 @@ body {
   #resume-wrap ul.col {
     width: calc(100% - 20px); } }
 
-header {
-  display: none;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #ffffff;
-  padding: 25px 15px 6px 15px;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 99;
-  text-align: center; }
-  header .nav-icons {
-    margin-top: 15px; }
-  header img {
-    max-width: 380px;
-    width: 100%;
-    height: auto; }
-  header .settings-icon {
-    position: absolute;
-    top: 0;
-    right: 0; }
-  header .welcome {
-    position: absolute;
-    top: 12px;
-    right: 45px;
+.header {
+  display: none; }
+  .header header {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #ffffff;
-    width: 80px; }
+    padding: 25px 15px 6px 15px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 99;
+    text-align: center; }
+    .header header .nav-icons {
+      margin-top: 15px; }
+    .header header img {
+      max-width: 380px;
+      width: 100%;
+      height: auto; }
+    .header header .settings-icon {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    .header header .welcome {
+      position: absolute;
+      top: 12px;
+      right: 45px;
+      color: #ffffff;
+      width: 80px; }
 
 @media screen and (max-width: 980px) {
-  header {
+  .header {
     display: block; } }
 
 @media screen and (max-width: 480px) {
@@ -285,16 +288,10 @@ header {
     padding: 42px 15px 6px 15px; } }
 
 footer {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   color: #fff;
   padding: 15px;
   text-align: center;
-  /* .icons {
-    .icon {
-    }
-  } */ }
+  border-top: 1px #777777 solid; }
 
 .project {
   position: relative;
@@ -434,3 +431,20 @@ footer {
 @media screen and (max-width: 980px) {
   .main-side-bar {
     display: none; } }
+
+.htmltag {
+  font-family: "Courgette", cursive;
+  color: #777777;
+  margin: 15px 0;
+  font-size: 14px; }
+
+/* @media screen and (max-width: 980px) {
+  header {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    padding: 42px 15px 6px 15px;
+  }
+} */
