@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+import Sidebar from "./Sidebar/Sidebar";
+import ContentWrapper from "./ContentWrapper/ContentWrapper";
 import CodeExamples from "./CodeExamples";
 import WebExamples from "./WebExamples";
 import SingleExample from "./SingleExample";
@@ -53,89 +55,88 @@ const App = () => {
   if (codeExamples && webExamples && settings) {
     return (
       <div className="portfolio-wrap">
-        <div className="main-side-bar">
-          <img src="assets/cb-sidebar-logo.jpg" />
-        </div>
+        <Sidebar />
         <div className="App">
           <AuthProvider>
             <Router>
               <Header />
-              {/* <p>{this.state.testAPI}</p> */}
-              <Switch>
-                <Route exact path={`${process.env.PUBLIC_URL}/`}>
-                  <About settings={settings[0]} />
-                </Route>
-                <Route path={`${process.env.PUBLIC_URL}/resume`}>
-                  <Resume />
-                </Route>
-                <Route path={`${process.env.PUBLIC_URL}/websites`}>
-                  <div className="page-title">
-                    <h1>Web Sites</h1>
-                  </div>
-                  <WebExamples data={webExamples} />
-                </Route>
-                <Route path={`${process.env.PUBLIC_URL}/code`}>
-                  <div className="page-title">
-                    <h1>Code Examples</h1>
-                  </div>
-                  <CodeExamples data={codeExamples} />
-                </Route>
-                <Route path={`${process.env.PUBLIC_URL}/contact`}>
-                  <Contact settings={settings[0]} />
-                </Route>
-                <PrivateRoute
-                  exact
-                  path="/dashboard"
-                  settings={settings[0]}
-                  component={Dashboard}
-                />
-                <Route exact path="/login">
-                  <Login />
-                </Route>
-                {codeExamples.map(function (single, index) {
-                  if (single.status === "publish") {
-                    const route = "/" + single.slug;
-                    const markup = (
-                      <Route
-                        key={index}
-                        path={`${process.env.PUBLIC_URL}${route}`}
-                      >
-                        <SingleExample
-                          single={single}
-                          type="code"
-                          index={index}
-                          data={codeExamples}
-                        />
-                      </Route>
-                    );
-                    return markup;
-                  }
-                  return false;
-                })}
-                {webExamples.map(function (single, index) {
-                  if (single.status === "publish") {
-                    const route = "/" + single.slug;
-                    const markup = (
-                      <Route
-                        key={index}
-                        path={`${process.env.PUBLIC_URL}${route}`}
-                      >
-                        <SingleExample
-                          single={single}
-                          type="web"
-                          index={index}
-                          data={webExamples}
-                        />
-                      </Route>
-                    );
-                    return markup;
-                  }
-                  return false;
-                })}
-                <Route>
-                  <h1>404 Page Not Found</h1>
-                </Route>
-              </Switch>
+              <ContentWrapper>
+                <Switch>
+                  <Route exact path={`${process.env.PUBLIC_URL}/`}>
+                    <About settings={settings[0]} />
+                  </Route>
+                  <Route path={`${process.env.PUBLIC_URL}/resume`}>
+                    <Resume />
+                  </Route>
+                  <Route path={`${process.env.PUBLIC_URL}/websites`}>
+                    <div className="page-title">
+                      <h1>Web Sites</h1>
+                    </div>
+                    <WebExamples data={webExamples} />
+                  </Route>
+                  <Route path={`${process.env.PUBLIC_URL}/code`}>
+                    <div className="page-title">
+                      <h1>Code Examples</h1>
+                    </div>
+                    <CodeExamples data={codeExamples} />
+                  </Route>
+                  <Route path={`${process.env.PUBLIC_URL}/contact`}>
+                    <Contact settings={settings[0]} />
+                  </Route>
+                  <PrivateRoute
+                    exact
+                    path="/dashboard"
+                    settings={settings[0]}
+                    component={Dashboard}
+                  />
+                  <Route exact path="/login">
+                    <Login />
+                  </Route>
+                  {codeExamples.map(function (single, index) {
+                    if (single.status === "publish") {
+                      const route = "/" + single.slug;
+                      const markup = (
+                        <Route
+                          key={index}
+                          path={`${process.env.PUBLIC_URL}${route}`}
+                        >
+                          <SingleExample
+                            single={single}
+                            type="code"
+                            index={index}
+                            data={codeExamples}
+                          />
+                        </Route>
+                      );
+                      return markup;
+                    }
+                    return false;
+                  })}
+                  {webExamples.map(function (single, index) {
+                    if (single.status === "publish") {
+                      const route = "/" + single.slug;
+                      const markup = (
+                        <Route
+                          key={index}
+                          path={`${process.env.PUBLIC_URL}${route}`}
+                        >
+                          <SingleExample
+                            single={single}
+                            type="web"
+                            index={index}
+                            data={webExamples}
+                          />
+                        </Route>
+                      );
+                      return markup;
+                    }
+                    return false;
+                  })}
+                  <Route>
+                    <h1>404 Page Not Found</h1>
+                  </Route>
+                </Switch>
+              </ContentWrapper>
               <Footer settings={settings[0]} />
               <Link to="/login">
                 <div className="settings-icon">

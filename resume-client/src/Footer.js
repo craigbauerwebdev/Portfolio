@@ -6,6 +6,7 @@ import Social from "./ui-components/Social";
 class Footer extends Component {
   render() {
     const { settings } = this.props;
+    const today = new Date();
     return (
       <footer>
         <Icons showButtons={false} />
@@ -15,7 +16,7 @@ class Footer extends Component {
           theme="light"
           height="24px"
         />
-        <p className="v-space-30">&copy; Craig Bauer 2019</p>
+        <p className="v-space-30">&copy; Craig Bauer {today.getFullYear()}</p>
       </footer>
     );
   }

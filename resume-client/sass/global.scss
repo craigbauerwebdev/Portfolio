@@ -20,6 +20,9 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
+  .content-wrapper {
+    padding: 30px;
+  }
   .portfolio-wrap {
     display: flex;
   }
@@ -35,9 +38,9 @@ body {
   .nav-icons {
     margin-top: 15px;
   }
-  .inner {
+  /* .inner {
     padding: 15px;
-  }
+  } */
   .related-projects {
     h2.more-projects {
       padding: 15px 15px 0 15px;
@@ -47,9 +50,9 @@ body {
     padding: 0 5px 10px 5px;
   }
   .page-title {
-    padding: 15px 15px 0 15px;
+    //padding: 15px 15px 0 15px;
     h1 {
-      padding: 15px 0 0 0;
+      //padding: 15px 0 0 0;
     }
   }
   #nav-description {
