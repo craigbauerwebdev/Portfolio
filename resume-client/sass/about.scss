@@ -2,7 +2,7 @@
 
 #about-wrap {
   //text-align: center;
-  margin-top: 30px;
+  //margin-top: 30px;
   .bio-pic {
     background-image: url(assets/me.jpg);
     background-size: cover;
@@ -15,13 +15,27 @@
   }
   h1 {
     font-family: $font-title;
-    color: $accent;
-    font-size: 60px;
+    //color: $accent;
+    font-size: 72px;
+    line-height: 72px;
     margin-left: 6%;
   }
-  p {
+  p,
+  img {
     margin-left: 6%;
   }
+
+  img {
+    max-width: 400px;
+    width: 100%;
+
+    &.profile-img {
+      border-radius: 50%;
+      max-width: 160px;
+      border: 5px $accent solid;
+    }
+  }
+
   .mern-stack {
     max-width: 700px;
   }

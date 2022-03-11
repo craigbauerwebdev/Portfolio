@@ -1,8 +1,9 @@
 .login-page {
-  padding: 15px;
+  padding: 90px 15px;
   max-width: 400px;
   margin: 0 auto; }
-  .login-page label, .login-page input {
+  .login-page label,
+  .login-page input {
     display: block; }
   .login-page label {
     margin: 15px 0; }

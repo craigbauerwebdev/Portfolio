@@ -88,7 +88,8 @@ body {
   button {
     color: $white;
     background: #146db4;
-    border-radius: 5px;
+    border: none;
+    //border-radius: 5px;
     padding: 15px 17px 15px 15px;
     font-size: 14px;
     text-shadow: 1px 1px 1px #525151;
@@ -120,6 +121,11 @@ body {
     -webkit-animation: spin 1s linear infinite; /* Safari */
     animation: spin 1s linear infinite;
     opacity: 0.5;
+  }
+  .settings-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .desktop {
     display: block;

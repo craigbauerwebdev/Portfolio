@@ -1,24 +1,35 @@
-#about-wrap {
-  margin-top: 30px; }
-  #about-wrap .bio-pic {
-    background-image: url(assets/me.jpg);
-    background-size: cover;
-    background-position: top;
-    width: 180px;
-    height: 180px;
+#about-wrap .bio-pic {
+  background-image: url(assets/me.jpg);
+  background-size: cover;
+  background-position: top;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px auto; }
+
+#about-wrap h1 {
+  font-family: "League Gothic", sans-serif;
+  font-size: 72px;
+  line-height: 72px;
+  margin-left: 6%; }
+
+#about-wrap p,
+#about-wrap img {
+  margin-left: 6%; }
+
+#about-wrap img {
+  max-width: 400px;
+  width: 100%; }
+  #about-wrap img.profile-img {
     border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 15px auto; }
-  #about-wrap h1 {
-    font-family: "Archivo Black", sans-serif;
-    color: #1c6fb5;
-    font-size: 60px;
-    margin-left: 6%; }
-  #about-wrap p {
-    margin-left: 6%; }
-  #about-wrap .mern-stack {
-    max-width: 700px; }
-  #about-wrap .bio {
-    text-align: left; }
-    #about-wrap .bio p {
-      line-height: 30px; }
+    max-width: 160px;
+    border: 5px #1c6fb5 solid; }
+
+#about-wrap .mern-stack {
+  max-width: 700px; }
+
+#about-wrap .bio {
+  text-align: left; }
+  #about-wrap .bio p {
+    line-height: 30px; }

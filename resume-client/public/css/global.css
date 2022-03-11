@@ -64,7 +64,7 @@ body {
   body button {
     color: #ffffff;
     background: #146db4;
-    border-radius: 5px;
+    border: none;
     padding: 15px 17px 15px 15px;
     font-size: 14px;
     text-shadow: 1px 1px 1px #525151;
@@ -93,6 +93,10 @@ body {
     /* Safari */
     animation: spin 1s linear infinite;
     opacity: 0.5; }
+  body .settings-icon {
+    position: absolute;
+    top: 0;
+    right: 0; }
   body .desktop {
     display: block; }
   body .mobile {
