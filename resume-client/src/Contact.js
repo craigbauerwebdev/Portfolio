@@ -5,6 +5,7 @@ import Social from "./ui-components/Social";
 //import './css/Weather.css';
 //import { BrowserRouter as Link } from "react-router-dom";
 import Button from "./ui-components/Button";
+import PageHeader from "./ContentWrapper/PageHeader";
 
 class Contact extends Component {
   constructor(props) {
@@ -41,8 +42,8 @@ class Contact extends Component {
   submitForm = (e) => {
     e.preventDefault();
     const validEmail = this.validateEmail(this.state.email);
-    console.log("Valid Email: ", validEmail);
-    console.log(this.state.name, this.state.email, this.state.message);
+    //console.log("Valid Email: ", validEmail);
+    //console.log(this.state.name, this.state.email, this.state.message);
     //form validation
     // validate email before check
     /* this.setState({
@@ -124,7 +125,7 @@ class Contact extends Component {
       mailto = "mailto:" + settings.main_email;
     return (
       <div id="contact-wrap" className="inner">
-        <h1>Contact Me</h1>
+        <PageHeader text="Contact" />
         <div className="profile-card group">
           <div className="contact-pic"></div>
           <div>

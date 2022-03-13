@@ -17,6 +17,7 @@ import Dashboard from "./dashboard/Dashboard";
 import { AuthContext } from "./Auth/Auth";
 import { AuthProvider } from "./Auth/Auth";
 import { Link } from "react-router-dom";
+import PageHeader from "./ContentWrapper/PageHeader";
 
 const App = () => {
   const [codeExamples, setCodeExamples] = useState(null);
@@ -69,15 +70,11 @@ const App = () => {
                     <Resume />
                   </Route>
                   <Route path={`${process.env.PUBLIC_URL}/websites`}>
-                    <div className="page-title">
-                      <h1>Web Sites</h1>
-                    </div>
+                    <PageHeader text="Web Examples" />
                     <WebExamples data={webExamples} />
                   </Route>
                   <Route path={`${process.env.PUBLIC_URL}/code`}>
-                    <div className="page-title">
-                      <h1>Code Examples</h1>
-                    </div>
+                    <PageHeader text="Code Examples" />
                     <CodeExamples data={codeExamples} />
                   </Route>
                   <Route path={`${process.env.PUBLIC_URL}/contact`}>
