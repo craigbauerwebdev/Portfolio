@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Button from "./ui-components/Button";
-import Info from "./ResumeComponents/Info";
 import PageHeader from "./ContentWrapper/PageHeader";
-import Summary from "./ResumeComponents/Summary";
-import Skills from "./ResumeComponents/Skills";
+import Tag from "./ui-components/Tag";
+//import Info from "./ResumeComponents/Info";
+//import Summary from "./ResumeComponents/Summary";
+//import Skills from "./ResumeComponents/Skills";
 
 class Resume extends Component {
   componentDidMount() {
@@ -13,7 +14,8 @@ class Resume extends Component {
   render() {
     return (
       <>
-        <PageHeader text="Resume" />
+        <PageHeader text="Skills & Experience" />
+        <Tag content="<section>" indent="4%" />
         <div id="resume-wrap" className="inner max-960">
           {/* <iframe
           width="80%"
@@ -26,9 +28,14 @@ class Resume extends Component {
               url="http://craigbauer.nyc/resume/CraigBauerResume.pdf"
               label="Download PDF Resume"
             />
-            <img width="100%" src="assets/craigbauerresume2022.jpg" />
+            {/*  <img
+              width="100%"
+              src="assets/craigbauerresume2022.jpg"
+              alt="resume"
+            /> */}
             {/* <Button url="http://craigbauer.nyc" label="Download Word Resume" /> */}
           </div>
+          <Tag content="</section>" indent="4%" />
           {/* <Info />
           <hr />
           <Summary

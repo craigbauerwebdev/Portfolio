@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is my personal website which features code example, websites and applications that I have developed over the years. It is done on the MERN stack (MongoDB, Express, React & Node JS) using some data from the WP API. I am in the process of move tha data over to mongoDB to get rid of WordPress entirely. I am also building a tool/ CMS in react and Express to manage the data in Mongo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigbauerwebdev/Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigbauerwebdev/Portfolio/issues"
+  },
+  "homepage": "https://github.com/craigbauerwebdev/Portfolio#readme"
+}

@@ -6,6 +6,7 @@ import Social from "./ui-components/Social";
 //import { BrowserRouter as Link } from "react-router-dom";
 import Button from "./ui-components/Button";
 import PageHeader from "./ContentWrapper/PageHeader";
+import Tag from "./ui-components/Tag";
 
 class Contact extends Component {
   constructor(props) {
@@ -126,6 +127,7 @@ class Contact extends Component {
     return (
       <div id="contact-wrap" className="inner">
         <PageHeader text="Contact" />
+        <Tag content="<section>" indent="4%" />
         <div className="profile-card group">
           <div className="contact-pic"></div>
           <div>

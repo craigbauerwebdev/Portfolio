@@ -6,8 +6,17 @@
   flex-shrink: 0;
   height: 100vh;
   position: fixed; }
-  .main-side-bar img {
+  .main-side-bar .sidebar-logo {
     width: 100%; }
+  .main-side-bar .link-item {
+    display: block;
+    padding: 24px 15px;
+    border-bottom: 1px solid #777777;
+    color: #777777;
+    text-decoration: none;
+    cursor: pointer; }
+    .main-side-bar .link-item:hover {
+      color: #1c6fb5; }
 
 @media screen and (max-width: 980px) {
   .main-side-bar {

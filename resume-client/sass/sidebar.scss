@@ -10,8 +10,21 @@
   position: fixed;
   //border-right: 1px $grey solid;
 
-  img {
+  .sidebar-logo {
     width: 100%;
+  }
+
+  .link-item {
+    display: block;
+    padding: 24px 15px;
+    border-bottom: 1px solid $light-gray;
+    color: $light-gray;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent;
+    }
   }
 }
 

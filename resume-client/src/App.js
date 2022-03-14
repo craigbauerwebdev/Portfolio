@@ -56,10 +56,10 @@ const App = () => {
   if (codeExamples && webExamples && settings) {
     return (
       <div className="portfolio-wrap">
-        <Sidebar />
-        <div className="App">
-          <AuthProvider>
-            <Router>
+        <Router>
+          <Sidebar />
+          <div className="App">
+            <AuthProvider>
               <Header />
               <ContentWrapper>
                 <Switch>
@@ -141,9 +141,9 @@ const App = () => {
                   {currentUser && <span className="welcome">Signed In</span>}
                 </div>
               </Link>
-            </Router>
-          </AuthProvider>
-        </div>
+            </AuthProvider>
+          </div>
+        </Router>
       </div>
     );
   } else {
